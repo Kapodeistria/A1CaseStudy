@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "staticWebAppName": {
-      "value": "ai-service-hub-presentation"
+      "value": "a1-casestudy-ai"
     },
     "location": {
       "value": "westeurope"

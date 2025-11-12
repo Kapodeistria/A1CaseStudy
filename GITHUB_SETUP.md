@@ -94,7 +94,7 @@ git push -u origin main
 
 **Deployment Token:**
 ```
-bc778af7a70b728400a11d48d9f1c5abd70106560609560cee0ae19b01c8bf2803-2d8f05ca-4739-4030-9263-aa4d1c0123530032406045a1dc03
+73062b8cf61abff7ded1e0fc492e82116a9198effd234b74395199a85bbf9a5303-56d77c5c-0b9a-4f74-8b97-e22dc612582500303120e42a7a03
 ```
 
 **Schritte:**
@@ -126,7 +126,7 @@ Der Workflow wird automatisch ausgeführt bei:
 2. Klicke auf den laufenden Workflow
 3. Beobachte den Build- und Deployment-Prozess
 4. Nach Erfolg ist deine App live unter:
-   **https://nice-ground-045a1dc03.3.azurestaticapps.net**
+   **https://gray-glacier-0e42a7a03.3.azurestaticapps.net**
 
 ## Workflow Features
 

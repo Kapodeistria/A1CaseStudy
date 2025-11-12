@@ -23,7 +23,7 @@ Moderne, interaktive Präsentation für den Public Sector AI Service Hub von A1 
 
 ## 🚀 Live Demo
 
-**Production:** https://nice-ground-045a1dc03.3.azurestaticapps.net
+**Production:** https://gray-glacier-0e42a7a03.3.azurestaticapps.net
 
 ### Routen:
 - `/` - Version Selector
