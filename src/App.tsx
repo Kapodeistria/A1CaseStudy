@@ -4,7 +4,7 @@ import { Deck } from 'spectacle'
 // Theme & Styles
 import './theme/tokens.css'
 import './app.css'
-import spectacleTheme, { createDeckTemplate } from './theme/spectacleTheme'
+import spectacleTheme from './theme/spectacleTheme'
 
 // Version Selector
 import VersionSelector from './components/VersionSelector'
@@ -42,6 +42,7 @@ import BoardSolutionSlide from './slides-board/03-solution'
 import BoardRoadmapSlide from './slides-board/04-roadmap'
 import BoardROISlide from './slides-board/05-roi'
 import BoardCTASlide from './slides-board/06-cta'
+import { createDeckTemplate } from './theme/spectacleTheme'
 
 const PersonalPresentation = () => {
   return (

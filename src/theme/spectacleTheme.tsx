@@ -3,9 +3,7 @@
  * A1 Telekom Austria - Public Sector AI Service Hub
  */
 
-import { useContext } from 'react'
-import { DeckContext } from 'spectacle'
-import NavigationOverlay from '../components/NavigationOverlay'
+import DeckNavigation from '../components/DeckNavigation'
 
 export const spectacleTheme = {
   colors: {
@@ -51,40 +49,16 @@ export const spectacleTheme = {
   },
 }
 
-// Deck template with navigation overlay
 export const createDeckTemplate = (deckLabel: string) => {
   return function DeckTemplate() {
-    const deckContext = useContext(DeckContext)
-
-    if (!deckContext) return null
-
-    const { activeView, numberOfSlides, skipTo } = deckContext as any
-
-    const handlePrev = () => {
-      if (activeView.slideIndex > 0) {
-        skipTo({ slideIndex: activeView.slideIndex - 1, stepIndex: 0 })
-      }
-    }
-
-    const handleNext = () => {
-      if (activeView.slideIndex < numberOfSlides - 1) {
-        skipTo({ slideIndex: activeView.slideIndex + 1, stepIndex: 0 })
-      }
-    }
-
     return (
-      <NavigationOverlay
-        currentSlide={activeView.slideIndex}
-        totalSlides={numberOfSlides}
-        onPrevSlide={handlePrev}
-        onNextSlide={handleNext}
-        deckLabel={deckLabel}
-      />
+      <div style={{ pointerEvents: 'auto' }}>
+        <DeckNavigation deckLabel={deckLabel} />
+      </div>
     )
   }
 }
 
-// Default template without navigation (for backwards compatibility)
 export const deckTemplate = () => null
 
 export const slideTransition = {
