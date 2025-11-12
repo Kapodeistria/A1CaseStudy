@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Deck } from 'spectacle'
+import { useEffect } from 'react'
 
 // Theme & Styles
 import './theme/tokens.css'
@@ -126,6 +127,43 @@ const BoardCaseStudyPresentation = () => {
 }
 
 function App() {
+  useEffect(() => {
+    // Prevent mobile browser swipe navigation (back/forward)
+    // This allows Spectacle swipe gestures to work without triggering browser navigation
+    let touchStartX = 0
+    let touchStartY = 0
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX
+      touchStartY = e.touches[0].clientY
+    }
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!touchStartX || !touchStartY) return
+
+      const touchEndX = e.touches[0].clientX
+      const touchEndY = e.touches[0].clientY
+
+      const deltaX = Math.abs(touchEndX - touchStartX)
+      const deltaY = Math.abs(touchEndY - touchStartY)
+
+      // If horizontal swipe is more prominent than vertical, prevent default
+      // This stops browser back/forward navigation while allowing Spectacle slides
+      if (deltaX > deltaY && deltaX > 10) {
+        e.preventDefault()
+      }
+    }
+
+    // Use passive: false to allow preventDefault()
+    document.addEventListener('touchstart', handleTouchStart, { passive: true })
+    document.addEventListener('touchmove', handleTouchMove, { passive: false })
+
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart)
+      document.removeEventListener('touchmove', handleTouchMove)
+    }
+  }, [])
+
   return (
     <Router>
       <Routes>
