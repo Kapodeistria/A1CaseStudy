@@ -41,7 +41,7 @@ export const spectacleTheme = {
     snug: '1.35',
     relaxed: '1.6',
   },
-  space: [0, 4, 8, 12, 16, 24, 32, 48, 64, 96],
+  space: [0, 4, 8, 12, 16, 24, 32, 48, 64, 96] as number[],
   size: {
     width: 1920,
     height: 1080,

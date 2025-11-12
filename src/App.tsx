@@ -47,6 +47,7 @@ import { createDeckTemplate } from './theme/spectacleTheme'
 const PersonalPresentation = () => {
   return (
     <Deck
+      // @ts-ignore - Custom theme with CSS variables
       theme={spectacleTheme}
       template={createDeckTemplate('Personal Deck')}
       printScale={0.75}
@@ -69,6 +70,7 @@ const PersonalPresentation = () => {
 const CaseStudyPresentation = () => {
   return (
     <Deck
+      // @ts-ignore - Custom theme with CSS variables
       theme={spectacleTheme}
       template={createDeckTemplate('Tech Deck')}
       printScale={0.75}
@@ -101,6 +103,7 @@ const CaseStudyPresentation = () => {
 const BoardCaseStudyPresentation = () => {
   return (
     <Deck
+      // @ts-ignore - Custom theme with CSS variables
       theme={spectacleTheme}
       template={createDeckTemplate('Board Deck')}
       printScale={0.75}

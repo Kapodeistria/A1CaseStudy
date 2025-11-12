@@ -23,7 +23,10 @@ Moderne, interaktive Präsentation für den Public Sector AI Service Hub von A1 
 
 ## 🚀 Live Demo
 
-**Production:** https://a1-casestudy-ai.azurewebsites.net
+**Production (Azure App Service):** https://a1-casestudy-ai.azurewebsites.net
+**Backup (Azure Static Web Apps):** https://agreeable-pond-027b9ca03.3.azurestaticapps.net
+
+Both deployments provide redundancy and high availability.
 
 ### Routen:
 - `/` - Version Selector
@@ -39,7 +42,7 @@ Moderne, interaktive Präsentation für den Public Sector AI Service Hub von A1 
 - **Styling:** CSS Variables + Tailwind-inspired classes
 - **Animation:** Framer Motion
 - **Routing:** React Router
-- **Hosting:** Azure App Service
+- **Hosting:** Azure App Service + Azure Static Web Apps (redundant deployment)
 
 ## 🛠️ Development
 
