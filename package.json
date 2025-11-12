@@ -10,7 +10,7 @@
     "start": "node server.cjs",
     "extract": "node scripts/extract-assets.mjs",
     "serve": "node scripts/build-and-serve.mjs",
-    "deploy:app-service": "npm run build && zip -r deploy.zip dist package.json server.cjs && $HOME/Library/Python/3.9/bin/az webapp deploy --resource-group rg-ai-service-hub-presentation --name a1-casestudy-ai --src-path deploy.zip --type zip --async true && rm deploy.zip",
+    "deploy:app-service": "npm run build && zip -r deploy.zip dist package.json package-lock.json server.cjs node_modules && $HOME/Library/Python/3.9/bin/az webapp deploy --resource-group rg-ai-service-hub-presentation --name a1-casestudy-ai --src-path deploy.zip --type zip --async true && rm deploy.zip",
     "deploy:static": "echo 'Static Web App URL: https://agreeable-pond-027b9ca03.3.azurestaticapps.net' && echo 'Use GitHub Actions or Azure Portal to deploy to Static Web Apps'",
     "deploy:local": "npm run deploy:app-service",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
