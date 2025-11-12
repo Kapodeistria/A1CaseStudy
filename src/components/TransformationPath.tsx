@@ -22,7 +22,7 @@ const phases = [
   }
 ]
 
-const cardVariants = {
+const cardVariants: any = {
   hidden: { opacity: 0, y: 24 },
   visible: (index: number) => ({
     opacity: 1,
@@ -30,7 +30,7 @@ const cardVariants = {
     transition: {
       delay: 0.15 + index * 0.15,
       duration: 0.45,
-      ease: 'easeOut'
+      ease: [0, 0.71, 0.2, 1.01]
     }
   })
 }

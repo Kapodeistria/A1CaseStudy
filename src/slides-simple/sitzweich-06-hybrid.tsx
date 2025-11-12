@@ -61,7 +61,31 @@ export default function HybridStrategySlide() {
           </div>
 
           <div style={{
-            marginTop: '1.75rem',
+            marginTop: '1.5rem',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '1rem'
+          }}>
+            <div style={{ border: '1px solid rgba(15,23,42,0.08)', borderRadius: '12px', padding: '1rem', background: '#F9FAFB' }}>
+              <p style={{ margin: 0, fontWeight: 600, color: '#0F172A' }}>Azure Cloud</p>
+              <ul style={{ margin: '0.4rem 0 0 1rem', color: '#4B5563', lineHeight: 1.6 }}>
+                <li>Elastische GPU-Pools (ND, NC Serien)</li>
+                <li>Full-stack AI/ML Services & Copilot</li>
+                <li>Ideal für Training & Bursting</li>
+              </ul>
+            </div>
+            <div style={{ border: '1px solid rgba(15,23,42,0.08)', borderRadius: '12px', padding: '1rem', background: '#F9FAFB' }}>
+              <p style={{ margin: 0, fontWeight: 600, color: '#0F172A' }}>A1 / Exoscale</p>
+              <ul style={{ margin: '0.4rem 0 0 1rem', color: '#4B5563', lineHeight: 1.6 }}>
+                <li>Dedizierte GPUs mit EU-Datensouveränität</li>
+                <li>24/7 Edge-Inferenz, niedrige OPEX</li>
+                <li>Azure Arc Management & Defender</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{
+            marginTop: '1.25rem',
             padding: '1.25rem 1.5rem',
             borderRadius: '14px',
             border: '1px solid rgba(0, 204, 102, 0.35)',
@@ -71,7 +95,7 @@ export default function HybridStrategySlide() {
             lineHeight: 1.7
           }}>
             Hybrid-Playbook: Grundlast auf Exoscale GPUs (Inference). Azure für Training + Peaks. Azure Arc + GitOps orchestrieren Deployments,
-            wodurch Workloads zwischen Clouds verschiebbar bleiben und Transformation Offices klare Kosten-/Impact-KPIs erhalten.
+            wodurch Workloads verschiebbar bleiben und Transformation Offices klare Kosten-/Impact-KPIs erhalten.
           </div>
         </CaseStudyShell>
       </FlexBox>

@@ -33,7 +33,7 @@ export default function VersionSelector() {
             <h2>Case Study · Board Deck</h2>
             <p>Verdichtete Entscheidungsgrundlage für Sitzweich AG (Lighthouse Wrinkle Detection)</p>
             <ul>
-              <li>7 Slides</li>
+              <li>8 Slides</li>
               <li>~8 Minuten</li>
               <li>Strategic/Financial Highlights</li>
               <li>Roadmap & Governance Fokus</li>
@@ -46,7 +46,7 @@ export default function VersionSelector() {
             <h2>Sitzweich AG Case Study (Detail)</h2>
             <p>Kundenspezifische Präsentation für Automotive Seating Systems (400 MA, 7 Standorte)</p>
             <ul>
-              <li>13 Slides</li>
+              <li>14 Slides</li>
               <li>~15 Minuten</li>
               <li>Business Problem · Tech Stack · ROI</li>
               <li>SD-WAN & Multi-Site Architecture</li>

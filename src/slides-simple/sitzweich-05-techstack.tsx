@@ -50,7 +50,7 @@ export default function TechStackSlide() {
                 <span style={badgeStyle('#E60000')}>Azure Fabric</span>
               </div>
               <Text fontSize="0.9rem" style={{ color: '#4B5563', lineHeight: 1.6 }}>
-                1.800+ Modelle (GPT-4o, Phi-3-vision), AutoML für YOLO/Mask R-CNN, Data Lakehouse & KPI Dashboards.
+                1.800+ Modelle (GPT-4o, Phi-3-vision), AutoML für YOLO/Mask R-CNN, Fabric Data Lakehouse & KPI-Dashboards.
               </Text>
             </div>
 

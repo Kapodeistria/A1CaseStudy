@@ -57,8 +57,8 @@ export default function ProblemSlide() {
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#1F2937', lineHeight: 2, fontSize: 'clamp(0.95rem, 1.15vw, 1.05rem)' }}>
             <li>• Falten & Materialabweichungen schwer sichtbar</li>
             <li>• Subjektive Bewertung → keine Audit-Trails</li>
-            <li>• 60 Sek./Prüfung → 27x zu langsam für Skalierung</li>
-            <li>• 15-20% Fehlerquote bei Spitzenlast</li>
+            <li>• 60 Sek. manuelle Prüfung pro Sitz</li>
+            <li>• Qualitätskontrolle als Produktionsengpass</li>
           </ul>
           <div style={{
             position: 'absolute',
@@ -82,10 +82,10 @@ export default function ProblemSlide() {
             Kosten & Impact
           </h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#1F2937', lineHeight: 2, fontSize: 'clamp(0.95rem, 1.15vw, 1.05rem)' }}>
-            <li><strong style={{ fontWeight: 600 }}>€2.8M</strong> Nacharbeitskosten/Jahr</li>
-            <li><strong style={{ fontWeight: 600 }}>12%</strong> Ausschussquote · 30% Defekte vermeidbar</li>
-            <li><strong style={{ fontWeight: 600 }}>25 FTE</strong> Qualitätsprüfer + Overtime</li>
-            <li>Fehler stoppen Linie · 40% Output-Risiko</li>
+            <li><strong style={{ fontWeight: 600 }}>€2.8M</strong> Nacharbeitskosten/Jahr (Annahme)</li>
+            <li><strong style={{ fontWeight: 600 }}>~12%</strong> Ausschussquote</li>
+            <li><strong style={{ fontWeight: 600 }}>25 FTE</strong> Qualitätsprüfer</li>
+            <li>Qualitätsfehler beeinträchtigen Produktionsflow</li>
           </ul>
           <div style={{
             position: 'absolute',

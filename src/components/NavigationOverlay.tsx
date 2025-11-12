@@ -7,13 +7,15 @@ interface NavigationOverlayProps {
   totalSlides: number
   onPrevSlide: () => void
   onNextSlide: () => void
+  deckLabel?: string
 }
 
 export default function NavigationOverlay({
   currentSlide,
   totalSlides,
   onPrevSlide,
-  onNextSlide
+  onNextSlide,
+  deckLabel
 }: NavigationOverlayProps) {
   const navigate = useNavigate()
   const [elapsedTime, setElapsedTime] = useState(0)
@@ -63,6 +65,7 @@ export default function NavigationOverlay({
         </button>
 
         <div className="slide-counter">
+          {deckLabel && <span className="deck-label">{deckLabel} · </span>}
           {currentSlide + 1} / {totalSlides}
         </div>
 

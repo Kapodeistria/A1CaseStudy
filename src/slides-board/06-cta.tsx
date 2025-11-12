@@ -1,5 +1,6 @@
 import { Slide, Heading, FlexBox, Text } from 'spectacle'
 import CaseStudyShell from '../components/CaseStudyShell'
+import InfoCard from '../components/InfoCard'
 
 export default function BoardCTASlide() {
   return (
@@ -17,19 +18,24 @@ export default function BoardCTASlide() {
             Wir schlagen vor, Q1 2026 mit einem PoV zu starten und bis Ende 2026 alle Werke zu skalieren. A1 übernimmt Architektur, Umsetzung
             und Transformation Office – Sitzweich stellt Produktowner, Datenzugang und Change Champions.
           </Text>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
-            <div style={{ minWidth: '200px', padding: '1rem', borderRadius: '14px', border: '1px solid rgba(230,0,0,0.2)' }}>
-              <p style={{ margin: 0, fontWeight: 600, color: '#E60000' }}>Heute beschließen</p>
-              <p style={{ margin: '0.4rem 0 0 0', color: '#4B5563' }}>Budget & Governance Setup</p>
-            </div>
-            <div style={{ minWidth: '200px', padding: '1rem', borderRadius: '14px', border: '1px solid rgba(0,174,239,0.2)' }}>
-              <p style={{ margin: 0, fontWeight: 600, color: '#00AEEF' }}>Q1 2026</p>
-              <p style={{ margin: '0.4rem 0 0 0', color: '#4B5563' }}>PoV + KPI Read-out</p>
-            </div>
-            <div style={{ minWidth: '200px', padding: '1rem', borderRadius: '14px', border: '1px solid rgba(0,204,102,0.2)' }}>
-              <p style={{ margin: 0, fontWeight: 600, color: '#00CC66' }}>Q2-Q4 2026</p>
-              <p style={{ margin: '0.4rem 0 0 0', color: '#4B5563' }}>Rollout + Skalierung</p>
-            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+            <InfoCard title="Heute beschließen" tone="red" align="center">
+              Budget, Governance Setup, Sponsor & Product Owner
+            </InfoCard>
+            <InfoCard title="Q1 2026" tone="blue" align="center">
+              PoV Kick-off · KPI Read-out · Invest-Check
+            </InfoCard>
+            <InfoCard title="Q2–Q4 2026" tone="green" align="center">
+              Rollout & Skalierung auf alle Werke
+            </InfoCard>
+          </div>
+          <div style={{ marginTop: '1.5rem', textAlign: 'left', color: '#4B5563' }}>
+            <p style={{ margin: '0 0 0.4rem 0', fontWeight: 600 }}>Entscheidungen heute benötigt:</p>
+            <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 1.8 }}>
+              <li>Investitionsfreigabe €600–800K (inkl. Hybrid-Infrastruktur & Betrieb)</li>
+              <li>Transformation Sponsor + Product Owner Quality nominieren</li>
+              <li>Startschuss PoV mit A1 Delivery Team im Januar 2026</li>
+            </ul>
           </div>
         </CaseStudyShell>
       </FlexBox>

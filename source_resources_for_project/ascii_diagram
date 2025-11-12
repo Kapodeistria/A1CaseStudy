@@ -1,0 +1,223 @@
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                    SITZWEICH AG · AZURE AI QUALITY CONTROL ARCHITECTURE                           ║
+║                          Smart Factory Reference Architecture · Austria East                      ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ LAYER 4 · SECURITY & GOVERNANCE                                              🟡 CONTROLLED       │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                   │
+│  ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐    │
+│  │  Microsoft       │   │  Azure Arc       │   │  Microsoft       │   │  Defender for    │    │
+│  │  Entra ID        │───│  Multi-Cluster   │───│  Purview         │───│  Cloud           │    │
+│  │  (Zero Trust)    │   │  Management      │   │  (Data Gov)      │   │  (Threat Detect) │    │
+│  └──────────────────┘   └──────────────────┘   └──────────────────┘   └──────────────────┘    │
+│           │                      │                       │                        │              │
+│           └──────────────────────┴───────────────────────┴────────────────────────┘              │
+│                                          │                                                        │
+│                            🇦🇹 A1 Sovereign Cloud Layer / Exoscale                               │
+│                            E2E Audit · DPIA · AI Act Controls                                    │
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                          ║
+                                          ║ RBAC · Policy Enforcement
+                                          ║
+┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ LAYER 3 · APPLICATION & INSIGHTS                                             🟢 AGGREGATED       │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                   │
+│  ┌────────────────────────────────┐          ┌─────────────────────────────────────────┐        │
+│  │   Power BI / Fabric            │          │   Copilot Studio                        │        │
+│  │   ─────────────────────        │          │   ────────────────                      │        │
+│  │   • Real-time Dashboards       │◄────────►│   • NL Query Interface                  │        │
+│  │   • KPI Heatmaps               │          │   • Defect Analysis Assistant           │        │
+│  │   • Trend Analysis             │          │   • Production Insights                 │        │
+│  └────────────────────────────────┘          └─────────────────────────────────────────┘        │
+│           │                                                    │                                  │
+│           └────────────────────────┬───────────────────────────┘                                 │
+│                                    │                                                              │
+│  ┌────────────────────────────────┴─────────────────────────────────────────────┐               │
+│  │   Azure Logic Apps / Event Grid                                               │               │
+│  │   ───────────────────────────────────                                         │               │
+│  │   • SAP S/4 HANA Integration                                                  │               │
+│  │   • MES System Write-back                                                     │               │
+│  │   • Alert & Notification Workflows                                            │               │
+│  └───────────────────────────────────────────────────────────────────────────────┘               │
+│                                          │                                                        │
+└──────────────────────────────────────────┼────────────────────────────────────────────────────────┘
+                                          ║
+                                          ║ API Gateway · Event Hub
+                                          ║
+┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ LAYER 2 · AI & ML TRAINING PLATFORM                                          🟠 ANONYMIZED       │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                   │
+│  ┌──────────────────────────────────────────────────────────────────────────────────────┐       │
+│  │   OPTION 1 · RAPID PoV (1-2 Wochen)                                                   │       │
+│  │   ─────────────────────────────────                                                   │       │
+│  │   Azure AI Foundry · GPT-4 Vision Prompt-Flow                                         │       │
+│  │   • No Training Required · Compare Reference vs Test Images                           │       │
+│  │   • Explainable Results: "Wrinkle detected at top-left corner..."                     │       │
+│  │   • Cost: $0.01-0.03 per image · Ideal for Executive Buy-in                           │       │
+│  └──────────────────────────────────────────────────────────────────────────────────────┘       │
+│                                                                                                   │
+│  ┌──────────────────────────────────────────────────────────────────────────────────────┐       │
+│  │   OPTION 2 · PRODUCTION ML (4-8 Wochen)                                               │       │
+│  │   ───────────────────────────────────                                                 │       │
+│  │   Azure ML AutoML + Model Registry                                                    │       │
+│  │   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  ┌───────────────┐  │       │
+│  │   │ Vision          │  │ YOLOv5/v8       │  │ Faster R-CNN    │  │ Mask R-CNN    │  │       │
+│  │   │ Transformers    │  │ (Real-time)     │  │ (High Accuracy) │  │ (Segmentation)│  │       │
+│  │   └─────────────────┘  └─────────────────┘  └─────────────────┘  └───────────────┘  │       │
+│  │   • 97.8-99.4% Accuracy · 10-15 images per label (50+ for production)                │       │
+│  │   • Auto-Hyperparameter Tuning · Data Augmentation                                    │       │
+│  │   • GitOps MLOps via Azure DevOps                                                     │       │
+│  └──────────────────────────────────────────────────────────────────────────────────────┘       │
+│                                                                                                   │
+│  ┌──────────────────────────────────────────────────────────────────────────────────────┐       │
+│  │   Model Export Pipeline                                                               │       │
+│  │   ────────────────────                                                                │       │
+│  │   [ONNX Runtime Optimization] → Quantization: 241MB → 8MB (2.6x faster)               │       │
+│  │   [Model Registry] → Versioning · A/B Testing · Rollback Strategy                     │       │
+│  └──────────────────────────────────────────────────────────────────────────────────────┘       │
+│                                          │                                                        │
+│                                          │ Deploy to Edge                                         │
+└──────────────────────────────────────────┼────────────────────────────────────────────────────────┘
+                                          ║
+                                          ║ ONNX Model (8MB) · Container Images
+                                          ║
+┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ LAYER 1 · EDGE & DATA ACQUISITION                                           🔴 RESTRICTED        │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                   │
+│  ╔════════════════════════════════════════════════════════════════════════════════════╗         │
+│  ║  PRODUCTION ENVIRONMENT · 7 WERKE (PLANTS)                                         ║         │
+│  ╠════════════════════════════════════════════════════════════════════════════════════╣         │
+│  ║                                                                                     ║         │
+│  ║   ┌─────────────────────────────────────────────────────────────────┐              ║         │
+│  ║   │  Azure IoT Edge Runtime (on Azure Stack Edge / IPCs)            │              ║         │
+│  ║   │  ─────────────────────────────────────────────────              │              ║         │
+│  ║   │  • ONNX Runtime Inference (<100ms latency)                      │              ║         │
+│  ║   │  • Containerized ML Models                                       │              ║         │
+│  ║   │  • Offline Capability + Cloud Sync                               │              ║         │
+│  ║   │  • Azure Arc for Kubernetes Management                           │              ║         │
+│  ║   └─────────────────────────────────────────────────────────────────┘              ║         │
+│  ║                │                   │                    │                           ║         │
+│  ║                │                   │                    │                           ║         │
+│  ║   ┌────────────▼───┐   ┌──────────▼──────┐   ┌────────▼──────────────────┐        ║         │
+│  ║   │ 4K Vision      │   │ OPC UA          │   │ ONVIF                      │        ║         │
+│  ║   │ Cameras        │   │ Gateway         │   │ IP Cameras                 │        ║         │
+│  ║   │ + LED Lighting │   │ (PLC Data)      │   │ (RTSP Streams)             │        ║         │
+│  ║   └────────────────┘   └─────────────────┘   └────────────────────────────┘        ║         │
+│  ║                │                   │                    │                           ║         │
+│  ║   ┌────────────▼───────────────────▼────────────────────▼──────────────┐           ║         │
+│  ║   │  Azure IoT Operations                                               │           ║         │
+│  ║   │  ──────────────────────                                             │           ║         │
+│  ║   │  • MQTT Broker · Message Routing                                    │           ║         │
+│  ║   │  • Data Transformation · Protocol Conversion                        │           ║         │
+│  ║   │  • Edge Telemetry → Fabric OneLake / Delta Lake                     │           ║         │
+│  ║   └─────────────────────────────────────────────────────────────────────┘           ║         │
+│  ║                                                                                     ║         │
+│  ╚════════════════════════════════════════════════════════════════════════════════════╝         │
+│                                                                                                   │
+│   ┌──────────────────────────────────────────────────────────────────────────────┐              │
+│   │  PRODUCTION LINE INTEGRATION                                                  │              │
+│   │  ──────────────────────────                                                   │              │
+│   │  Seat Assembly → Vision Capture (4K) → AI Inference (2.2s) → Decision        │              │
+│   │  ✓ Pass → Continue   ✗ Fail → Alert Operator + Log to MES                    │              │
+│   │                                                                                │              │
+│   │  KEY METRICS:                                                                 │              │
+│   │  • 2.2s Cycle Time (27x faster than 60s manual inspection)                   │              │
+│   │  • 99% Precision (Mask/Faster R-CNN models)                                  │              │
+│   │  • <50ms Inference Latency over IoT Edge                                     │              │
+│   │  • 24/7 Operations · Edge Inferenz + Cloud Retraining & Governance           │              │
+│   └──────────────────────────────────────────────────────────────────────────────┘              │
+│                                                                                                   │
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                  DATA FLOW & COMMUNICATION                                        ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                   ║
+║  [Edge Devices] ──MQTT/HTTPS──► [IoT Hub] ──Event Grid──► [Logic Apps] ──REST──► [SAP S/4]      ║
+║       │                              │                           │                                ║
+║       │                              │                           └─► [Power BI / Fabric]          ║
+║       │                              │                                                            ║
+║       │                              └───Event Hub───► [Stream Analytics] ──► [Delta Lake]       ║
+║       │                                                                                            ║
+║       └──Telemetry──► [Azure Monitor] ──► [Application Insights] ──► [Alert Rules]               ║
+║                                                                                                   ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                DEPLOYMENT TOPOLOGY                                                ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                   ║
+║  ┌────────────────────────────────────────────────────────────────────────────────────────┐     ║
+║  │  AUSTRIA EAST (WIEN) · PRIMARY REGION                                                   │     ║
+║  │  ────────────────────────────────────                                                   │     ║
+║  │  • Azure AI Foundry (GPT-4 Vision)                                                      │     ║
+║  │  • Azure ML Workspace + Compute Clusters                                                │     ║
+║  │  • Azure Container Registry (Model Images)                                              │     ║
+║  │  • Azure IoT Hub + IoT Operations                                                       │     ║
+║  │  • Azure Fabric OneLake (Telemetry & Training Data)                                     │     ║
+║  │  • Power BI Premium Capacity                                                            │     ║
+║  │  • Azure Key Vault (Secrets & Certificates)                                             │     ║
+║  │  • Microsoft Purview (Data Catalog & Lineage)                                           │     ║
+║  └────────────────────────────────────────────────────────────────────────────────────────┘     ║
+║                                                                                                   ║
+║  ┌────────────────────────────────────────────────────────────────────────────────────────┐     ║
+║  │  A1 SOVEREIGN CLOUD LAYER / EXOSCALE                                                    │     ║
+║  │  ───────────────────────────────────────                                                │     ║
+║  │  • Data Residency Guarantee (Austria)                                                   │     ║
+║  │  • GDPR Compliance + AI Act Ready                                                       │     ║
+║  │  • Hybrid Connectivity via SD-WAN (7 Standorte)                                         │     ║
+║  │  • Private Link + ExpressRoute                                                          │     ║
+║  └────────────────────────────────────────────────────────────────────────────────────────┘     ║
+║                                                                                                   ║
+║  ┌────────────────────────────────────────────────────────────────────────────────────────┐     ║
+║  │  EDGE LOCATIONS · 7 PRODUCTION PLANTS                                                   │     ║
+║  │  ────────────────────────────────────────                                               │     ║
+║  │  • Azure Stack Edge (per plant)                                                         │     ║
+║  │  • Azure Arc-enabled Kubernetes                                                         │     ║
+║  │  • Local ONNX Model Cache                                                               │     ║
+║  │  • Offline Inference Capability                                                         │     ║
+║  └────────────────────────────────────────────────────────────────────────────────────────┘     ║
+║                                                                                                   ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                          TRANSFORMATION ROADMAP 2025-2027                                         ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                   ║
+║  Q1 2026: PoV                     Q2-Q3 2026: Rollout              2027: Scale                    ║
+║  ────────────────                 ───────────────────              ──────────                     ║
+║  • GPT-4 Vision Pilot             • 7 Werke Deployment             • Predictive Quality           ║
+║  • Business Case Validation       • Production Ready               • Additional Use Cases         ║
+║  • Data Collection                • MLOps Pipeline                 • Multi-Process Scaling        ║
+║  • Executive Buy-in               • SAP Integration                • Advanced Analytics           ║
+║                                                                                                   ║
+║  Erfolgsfaktoren: 70% People & Change · 20% Tech Backbone · 10% Algorithmen (10/20/70-Regel)    ║
+║                                                                                                   ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+LEGEND:
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+🔴 RESTRICTED   : Raw production data · On-premise only · OT Network
+🟠 ANONYMIZED   : De-identified training data · Secure cloud processing
+🟢 AGGREGATED   : Business insights · Role-based access · Board visibility
+🟡 CONTROLLED   : Full audit trail · Zero Trust · Compliance ready
+
+═══ : Cross-layer security boundaries
+─── : Data flow / API communication
+──► : Directional data flow
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Generated for: Sitzweich AG · A1 Telekom Austria Assessment
+Architecture: Azure-based Smart Factory Reference Implementation
+Compliance: GDPR · AI Act Ready · Austria Data Residency
+Contact: Christos Kapodistrias · Principal AI Cloud Solution Architect

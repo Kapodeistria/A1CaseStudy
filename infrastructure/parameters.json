@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "staticWebAppName": {
+      "value": "ai-service-hub-presentation"
+    },
+    "location": {
+      "value": "westeurope"
+    },
+    "sku": {
+      "value": "Free"
+    },
+    "tags": {
+      "value": {
+        "Environment": "Production",
+        "Project": "AI-Service-Hub-Presentation",
+        "ManagedBy": "Bicep",
+        "CostCenter": "Marketing"
+      }
+    }
+  }
+}

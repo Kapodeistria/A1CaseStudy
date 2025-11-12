@@ -87,7 +87,7 @@ export default function ArchitectureSlide() {
             <div
               key={layer.id}
               style={{
-                border: `1px solid rgba(15, 23, 42, 0.08)`,
+                border: '1px solid rgba(15, 23, 42, 0.08)',
                 borderRadius: '18px',
                 padding: '1.5rem',
                 boxShadow: '0 18px 35px rgba(15, 23, 42, 0.08)',

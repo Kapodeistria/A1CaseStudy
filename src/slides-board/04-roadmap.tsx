@@ -19,7 +19,7 @@ export default function BoardRoadmapSlide() {
           >
             Transformationspfad 2025–2027
           </Heading>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', justifyContent: 'space-between' }}>
             {phases.map((phase) => (
               <div
                 key={phase.title}
@@ -37,7 +37,7 @@ export default function BoardRoadmapSlide() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: '1.5rem', padding: '1rem', borderRadius: '12px', background: '#FFF4E5', color: '#92400E' }}>
+          <div style={{ marginTop: '1.75rem', padding: '1rem', borderRadius: '12px', background: '#FFF4E5', color: '#92400E' }}>
             Erfolgsfaktoren: Transformation Office + Skill-Programm (10/20/70-Regel) – 70% People & Change, 20% Tech Backbone, 10% Algorithmen.
           </div>
         </CaseStudyShell>

@@ -103,7 +103,7 @@ export default function ChallengesSlide() {
           textAlign: 'center' as const
         }}>
           <p style={{ fontSize: '1rem', color: '#0369a1', margin: 0, fontWeight: 500 }}>
-            <strong>A1 Begleitung:</strong> Transformation Office (10/20/70-Regel), 24/7 SOC, DPIA-Support, NIS2-konforme Infrastruktur & Upskilling Pfade
+            <strong>A1 Begleitung:</strong> Transformation Office, 24/7 SOC, DPIA-Support, NIS2-konforme Infrastruktur & Upskilling Pfade
           </p>
         </div>
       </CaseStudyShell>

@@ -11,11 +11,11 @@ export default function BoardTitleSlide() {
             margin="0 0 1rem 0"
             style={{ fontWeight: 500, letterSpacing: '-0.02em', color: '#0F172A' }}
           >
-            Sitzweich AG · Wrinkle Detection Lighthouse
+            Sitzweich AG · Faltenprüfung als Leuchtturmprojekt
           </Heading>
           <Text fontSize="1.2rem" style={{ color: '#5F6368', lineHeight: 1.7 }}>
-            Azure AI Vision + A1 Sovereign Cloud liefern 99% Genauigkeit, 27× schnellere Inspektionen und Payback in
-            unter 6 Monaten – als skalierbarer Blueprint für weitere Smart-Factory Use Cases.
+            Azure AI Vision + A1 Sovereign Cloud liefern 99 % Genauigkeit, 27× schnellere Inspektionen und Amortisation in
+            unter 6 Monaten – als skalierbarer Bauplan für weitere Smart-Factory-Anwendungen.
           </Text>
           <div style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
             <span style={{ fontWeight: 600, color: '#E60000' }}>Board Version</span>

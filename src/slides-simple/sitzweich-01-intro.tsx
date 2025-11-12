@@ -10,6 +10,7 @@ const cardStyle = {
   border: '1px solid rgba(255, 255, 255, 0.6)',
   flex: 1,
   minWidth: '300px',
+  minHeight: '280px',
   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
   position: 'relative' as const,
   overflow: 'hidden' as const
@@ -71,10 +72,10 @@ export default function IntroSlide() {
         <div style={{...cardStyle, borderTop: '3px solid #E60000'}}>
           <span style={badgeStyle}>Unternehmen</span>
           <ul style={{ listStyle: 'none', padding: 0, margin: '1.5rem 0 0 0' }}>
-            <li style={listItemStyle}>• Tier-1 Lieferant für Premium OEMs (Mercedes/BMW)</li>
-            <li style={listItemStyle}>• 7 Werke · 40+ Sitzvarianten · 400 Mitarbeitende</li>
-            <li style={listItemStyle}>• 5 Mio. visuelle Inspektionen / Monat</li>
-            <li style={listItemStyle}>• Ziel: Produktionsleitwerk für Smart Factory Programme</li>
+            <li style={listItemStyle}>• Tier-1 Automotive Lieferant</li>
+            <li style={listItemStyle}>• 7 Werke · 400 Mitarbeitende</li>
+            <li style={listItemStyle}>• 60 Sek. manuelle Prüfung pro Sitz</li>
+            <li style={listItemStyle}>• Ziel: Produktionsleitwerk für Smart Factory</li>
           </ul>
           <div style={{
             position: 'absolute',
@@ -95,7 +96,7 @@ export default function IntroSlide() {
             <li style={listItemStyle}>• Heterogene Security (M&A-Historie)</li>
             <li style={listItemStyle}>• SD-WAN über 7 Standorte, hybride Clouds</li>
             <li style={listItemStyle}>• OT/IT Interoperabilität + Datenhoheit</li>
-            <li style={listItemStyle}>• 60s manuelle Prüfung → 27x zu langsam · 15-20% Fehlerquote</li>
+            <li style={listItemStyle}>• 60s Prüfung zu langsam · 15-20% Fehlerquote</li>
           </ul>
           <div style={{
             position: 'absolute',
@@ -121,8 +122,7 @@ export default function IntroSlide() {
             letterSpacing: '-0.01em'
           }}>
             <strong style={{ color: '#E60000', fontWeight: 600 }}>KI-gestützte Qualitätskontrolle</strong> als Lighthouse-Programm mit
-            Azure AI Vision, AutoML & Edge Inferenz. Skalierbar auf weitere Prozesse, liefert 30x Cost-Out und
-            122% Cash-Flow Hebel als Early Adopter.
+            Azure AI Vision, AutoML & Edge Inferenz – skalierbar auf weitere Produktionsprozesse.
           </p>
           <div style={{
             position: 'absolute',

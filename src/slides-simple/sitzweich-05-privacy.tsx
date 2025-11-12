@@ -93,18 +93,42 @@ export default function PrivacyPyramidSlide() {
         </div>
           </div>
 
-          <div style={{
-            marginTop: '1.5rem',
-            padding: '1rem',
-            background: '#fafafa',
-            borderRadius: '8px',
-            textAlign: 'center' as const
-          }}>
-            <p style={{ fontSize: '0.95rem', color: '#666', margin: 0 }}>
-              <strong>Privacy by Design:</strong> Sensitivitäts-Level bestimmen Speicherort, Verschlüsselung & Zugriffskontrolle
-            </p>
+        <div style={{
+          marginTop: '1.5rem',
+          padding: '1rem',
+          background: '#fafafa',
+          borderRadius: '8px',
+          textAlign: 'center' as const
+        }}>
+          <p style={{ fontSize: '0.95rem', color: '#666', margin: 0 }}>
+            <strong>Privacy by Design:</strong> Sensitivitäts-Level bestimmen Speicherort, Verschlüsselung & Zugriffskontrolle
+          </p>
+        </div>
+
+        <div style={{
+          marginTop: '1.25rem',
+          borderRadius: '12px',
+          border: '1px solid rgba(15,23,42,0.08)',
+          overflow: 'hidden'
+        }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: '#F9FAFB', fontWeight: 600, color: '#0F172A' }}>
+            <div style={{ padding: '0.75rem' }}>Datentyp</div>
+            <div style={{ padding: '0.75rem' }}>Speicherort</div>
+            <div style={{ padding: '0.75rem' }}>Kontrollen</div>
           </div>
-        </CaseStudyShell>
+          {[
+            ['Personenbilder / Video', 'Edge (IoT Ops) · Austria East', 'Anonymisierung, Purview Sensitivity, RBAC'],
+            ['Prozessdaten / KPI', 'Azure Data Lake · Fabric', 'Purview, Encryption, Least Privilege'],
+            ['Aggregierte Insights', 'Power BI / Copilot Studio', 'Row-Level Security, Audit Logs']
+          ].map((row) => (
+            <div key={row[0]} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: '1px solid rgba(15,23,42,0.06)', color: '#4B5563' }}>
+              <div style={{ padding: '0.75rem' }}>{row[0]}</div>
+              <div style={{ padding: '0.75rem' }}>{row[1]}</div>
+              <div style={{ padding: '0.75rem' }}>{row[2]}</div>
+            </div>
+          ))}
+        </div>
+      </CaseStudyShell>
       </FlexBox>
     </Slide>
   )

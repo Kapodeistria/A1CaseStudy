@@ -82,6 +82,11 @@
   letter-spacing: 0.08em;
 }
 
+.deck-label {
+  color: rgba(229, 231, 235, 0.8);
+  font-weight: 500;
+}
+
 .timer-display {
   color: #e5e7eb;
   font-family: 'SF Mono', 'Monaco', monospace;

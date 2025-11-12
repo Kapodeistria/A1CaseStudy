@@ -1,5 +1,6 @@
 import { Slide, Heading, FlexBox } from 'spectacle'
 import CaseStudyShell from '../components/CaseStudyShell'
+import InfoCard from '../components/InfoCard'
 
 export default function BoardProblemSlide() {
   return (
@@ -14,24 +15,15 @@ export default function BoardProblemSlide() {
             Ausgangslage bei Sitzweich AG
           </Heading>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
-            <div style={{ border: '1px solid rgba(15,23,42,0.08)', borderRadius: '14px', padding: '1rem' }}>
-              <p style={{ margin: 0, fontWeight: 600, color: '#E60000' }}>Fertigung</p>
-              <p style={{ margin: '0.4rem 0 0 0', color: '#4B5563', lineHeight: 1.6 }}>
-                7 Werke, 40+ Sitzvarianten, 5 Mio. Checks/Monat – heute 60 Sek./Prüfung, subjektiv & fehleranfällig.
-              </p>
-            </div>
-            <div style={{ border: '1px solid rgba(15,23,42,0.08)', borderRadius: '14px', padding: '1rem' }}>
-              <p style={{ margin: 0, fontWeight: 600, color: '#E60000' }}>Kosten & Risiko</p>
-              <p style={{ margin: '0.4rem 0 0 0', color: '#4B5563', lineHeight: 1.6 }}>
-                €2.8 M Nacharbeit/Jahr · 12% Ausschuss · 25 FTE Prüfer – Fachkräfte schwer zu skalieren.
-              </p>
-            </div>
-            <div style={{ border: '1px solid rgba(15,23,42,0.08)', borderRadius: '14px', padding: '1rem' }}>
-              <p style={{ margin: 0, fontWeight: 600, color: '#E60000' }}>Transformation</p>
-              <p style={{ margin: '0.4rem 0 0 0', color: '#4B5563', lineHeight: 1.6 }}>
-                Hybrid IT-Landschaft & Datensouveränitätsanforderungen – idealer Startpunkt für Lighthouse.
-              </p>
-            </div>
+            <InfoCard title="Fertigung" tone="neutral">
+              7 Werke, 40+ Sitzvarianten, 5 Mio. Checks/Monat – heute 60 Sek./Prüfung, subjektiv & fehleranfällig.
+            </InfoCard>
+            <InfoCard title="Kosten & Risiko" tone="red">
+              €2,8 Mio. Nacharbeit/Jahr · 12 % Ausschuss · 25 FTE Prüfer – Experten schwer zu skalieren, hohe Stillstandskosten.
+            </InfoCard>
+            <InfoCard title="Transformation" tone="blue">
+              Hybride IT/OT-Landschaft, Datensouveränität & NIS2 – ideales Feld für ein AI-Leuchtturmprojekt.
+            </InfoCard>
           </div>
         </CaseStudyShell>
       </FlexBox>
