@@ -10,7 +10,9 @@
     "start": "node server.cjs",
     "extract": "node scripts/extract-assets.mjs",
     "serve": "node scripts/build-and-serve.mjs",
-    "deploy:azure": "npm run build && echo 'Upload dist/ to Azure Static Web Apps or Blob Storage' && echo 'See README.md for detailed instructions'",
+    "deploy:app-service": "npm run build && zip -r deploy.zip dist package.json server.cjs && az webapp deploy --resource-group rg-ai-service-hub-presentation --name a1-casestudy-ai --src-path deploy.zip --type zip --async true && rm deploy.zip",
+    "deploy:static": "npm run build && az staticwebapp show --name a1-casestudy-static --resource-group rg-ai-service-hub-presentation --query 'properties.defaultHostname' -o tsv",
+    "deploy:both": "npm run deploy:app-service && npm run deploy:static",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit"
   },
