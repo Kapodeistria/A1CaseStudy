@@ -1,0 +1,145 @@
+import { Section } from '../components/Section'
+import { Heading, Text, FlexBox, UnorderedList, ListItem, Table, TableHeader, TableBody, TableRow, TableCell } from 'spectacle'
+import { KPI, KPIGrid } from '../components/KPI'
+
+<Section title="Security & Compliance" subtitle="Datensouveränität & Regulatorik" color="quaternary" icon="🔒" />
+
+---
+
+## Daten-Souveränität: Ende-zu-Ende
+
+<FlexBox flexDirection="column" style={{ marginTop: '2rem', padding: '0 3rem' }}>
+  <Table style={{ fontSize: '1.1rem', width: '100%' }}>
+    <TableHeader>
+      <TableRow style={{ background: 'var(--brand-primary)' }}>
+        <TableCell style={{ padding: '1rem', fontWeight: 700, color: 'white' }}>Ebene</TableCell>
+        <TableCell style={{ padding: '1rem', fontWeight: 700, color: 'white' }}>Maßnahme</TableCell>
+        <TableCell style={{ padding: '1rem', fontWeight: 700, color: 'white' }}>Technologie</TableCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow style={{ background: 'var(--bg-card)' }}>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-primary)' }}>🌍 Geo-Residency</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-secondary)' }}>Daten bleiben in EU/AT</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--accent-1)', fontFamily: 'monospace' }}>Azure Germany North</TableCell>
+      </TableRow>
+      <TableRow style={{ background: 'var(--bg-secondary)' }}>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-primary)' }}>🔐 Verschlüsselung</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-secondary)' }}>At-rest & In-transit</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--accent-1)', fontFamily: 'monospace' }}>TLS 1.3, AES-256</TableCell>
+      </TableRow>
+      <TableRow style={{ background: 'var(--bg-card)' }}>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-primary)' }}>🧮 Confidential Computing</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-secondary)' }}>Daten in-use geschützt</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--accent-1)', fontFamily: 'monospace' }}>Azure Confidential VMs</TableCell>
+      </TableRow>
+      <TableRow style={{ background: 'var(--bg-secondary)' }}>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-primary)' }}>🔑 Key Management</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-secondary)' }}>Customer-Managed Keys</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--accent-1)', fontFamily: 'monospace' }}>Azure Key Vault (HSM)</TableCell>
+      </TableRow>
+      <TableRow style={{ background: 'var(--bg-card)' }}>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-primary)' }}>👁️ Monitoring</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-secondary)' }}>24/7 Threat Detection</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--accent-1)', fontFamily: 'monospace' }}>Azure Sentinel</TableCell>
+      </TableRow>
+      <TableRow style={{ background: 'var(--bg-secondary)' }}>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-primary)' }}>📜 Governance</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--text-secondary)' }}>Data Catalog & Lineage</TableCell>
+        <TableCell style={{ padding: '1rem', color: 'var(--accent-1)', fontFamily: 'monospace' }}>Microsoft Purview</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</FlexBox>
+
+---
+
+## GDPR & AI Act Compliance
+
+<FlexBox flexDirection="row" style={{ gap: '2rem', marginTop: '2rem' }}>
+  <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--color-success)' }}>
+    <Heading fontSize="xl" color="quaternary" margin="0 0 1.5rem 0">✅ GDPR Ready</Heading>
+    <UnorderedList fontSize="base" color="quinary">
+      <ListItem><strong>Privacy by Design:</strong> Datensparsamkeit, Pseudonymisierung</ListItem>
+      <ListItem><strong>Right to be Forgotten:</strong> Automatische Löschung nach Aufbewahrungsfristen</ListItem>
+      <ListItem><strong>Right to Explanation:</strong> Alle KI-Entscheidungen erklärbar</ListItem>
+      <ListItem><strong>Data Portability:</strong> Export in standardisierten Formaten</ListItem>
+      <ListItem><strong>DPIA:</strong> Data Protection Impact Assessment dokumentiert</ListItem>
+    </UnorderedList>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-2)' }}>
+    <Heading fontSize="xl" color="tertiary" margin="0 0 1.5rem 0">🤖 AI Act Konform</Heading>
+    <UnorderedList fontSize="base" color="quinary">
+      <ListItem><strong>High-Risk System:</strong> Verwaltungsentscheidungen = High-Risk</ListItem>
+      <ListItem><strong>Human Oversight:</strong> Kritische Entscheidungen von Menschen genehmigt</ListItem>
+      <ListItem><strong>Transparency:</strong> Bürger werden informiert bei KI-Nutzung</ListItem>
+      <ListItem><strong>Risk Management:</strong> Kontinuierliches Monitoring & Testing</ListItem>
+      <ListItem><strong>Documentation:</strong> Technische Dokumentation für Audits</ListItem>
+    </UnorderedList>
+  </FlexBox>
+</FlexBox>
+
+<FlexBox justifyContent="center" style={{ marginTop: '2rem' }}>
+  <Text fontSize="lg" color="tertiary" style={{ textAlign: 'center', fontWeight: 600, background: 'var(--bg-card)', padding: '1rem 2rem', borderRadius: '8px' }}>
+    🇪🇺 EU AI Act tritt in Kraft: Ab August 2026 verpflichtend für High-Risk AI Systeme
+  </Text>
+</FlexBox>
+
+---
+
+## Security Operations
+
+<FlexBox flexDirection="column" alignItems="center" style={{ marginTop: '2rem' }}>
+  <KPIGrid>
+    <KPI value="24/7" label="SOC Monitoring" sublabel="Azure Sentinel" color="quaternary" icon="👁️" size="medium" />
+    <KPI value="<15min" label="Incident Response" sublabel="Mean Time to Detect" color="secondary" icon="⚡" size="medium" />
+    <KPI value="ISO 27001" label="Zertifizierung" sublabel="Information Security" color="primary" icon="✓" size="medium" />
+  </KPIGrid>
+
+  <FlexBox flexDirection="row" style={{ gap: '2rem', marginTop: '3rem', width: '100%', justifyContent: 'center' }}>
+    <FlexBox flexDirection="column" alignItems="center" style={{ flex: '1 1 250px', maxWidth: '300px' }}>
+      <Text fontSize="2xl" margin="0 0 1rem 0">🛡️</Text>
+      <Heading fontSize="lg" color="secondary" margin="0 0 0.5rem 0">Zero Trust</Heading>
+      <Text fontSize="sm" color="quinary" style={{ textAlign: 'center' }}>
+        Least Privilege, MFA, Conditional Access
+      </Text>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" alignItems="center" style={{ flex: '1 1 250px', maxWidth: '300px' }}>
+      <Text fontSize="2xl" margin="0 0 1rem 0">🔄</Text>
+      <Heading fontSize="lg" color="secondary" margin="0 0 0.5rem 0">Backup & DR</Heading>
+      <Text fontSize="sm" color="quinary" style={{ textAlign: 'center' }}>
+        RPO: 1h, RTO: 4h, Geo-Redundant
+      </Text>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" alignItems="center" style={{ flex: '1 1 250px', maxWidth: '300px' }}>
+      <Text fontSize="2xl" margin="0 0 1rem 0">📋</Text>
+      <Heading fontSize="lg" color="secondary" margin="0 0 0.5rem 0">Audit Logging</Heading>
+      <Text fontSize="sm" color="quinary" style={{ textAlign: 'center' }}>
+        Alle Zugriffe protokolliert, 7 Jahre aufbewahrt
+      </Text>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" alignItems="center" style={{ flex: '1 1 250px', maxWidth: '300px' }}>
+      <Text fontSize="2xl" margin="0 0 1rem 0">🧪</Text>
+      <Heading fontSize="lg" color="secondary" margin="0 0 0.5rem 0">Penetration Tests</Heading>
+      <Text fontSize="sm" color="quinary" style={{ textAlign: 'center' }}>
+        Quartalsweise externe Tests, Bug Bounty
+      </Text>
+    </FlexBox>
+  </FlexBox>
+</FlexBox>
+
+---
+
+<Notes>
+  - Datensouveränität nicht nur Marketing-Buzzword sondern technische Realität
+  - Azure Germany North physisch in Frankfurt, rechtlich deutsches Rechenzentrum
+  - Confidential Computing: Daten auch während Verarbeitung im RAM verschlüsselt (Intel SGX)
+  - Customer-Managed Keys: Behörde hat volle Kontrolle über Verschlüsselungs-Keys
+  - AI Act: Public Sector AI Systems fallen unter "High-Risk" Kategorie
+  - Human-in-the-Loop essentiell: Finale Entscheidung immer bei Mensch
+  - ISO 27001, SOC 2 Type II Zertifizierungen für Vertrauen
+</Notes>

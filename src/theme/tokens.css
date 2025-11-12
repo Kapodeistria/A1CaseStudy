@@ -1,0 +1,199 @@
+/**
+ * Design Tokens - Public Sector AI Service Hub
+ * Brand: A1 Telekom Austria
+ * Deploy: Azure Static Web Apps / Blob Storage
+ */
+
+:root {
+  /* === BRAND COLORS (A1 Telekom Austria) === */
+  --brand-primary: #E60000;        /* A1 Red */
+  --brand-primary-dark: #B50000;
+  --brand-primary-light: #FF5A36;
+  --brand-secondary: #1B1C1F;      /* Neutral Graphite */
+  --brand-bg: #FFFFFF;             /* White Background */
+  --brand-text: #1E1E1E;           /* Deep Gray */
+  --accent-1: #00AEEF;             /* Azure Blue */
+  --accent-2: #FFB81C;             /* Amber (highlight) */
+  --accent-3: #00CC66;             /* Success Green */
+
+  /* === SEMANTIC COLORS === */
+  --color-success: var(--accent-3);
+  --color-warning: var(--accent-2);
+  --color-danger: var(--brand-primary);
+  --color-info: var(--accent-1);
+
+  /* === GRAYSCALE === */
+  --gray-50: #F8FAFC;
+  --gray-100: #EEF2F6;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #0B0F19;
+
+  /* === BACKGROUNDS === */
+  --bg-primary: var(--brand-bg);
+  --bg-secondary: #F5F5F7;
+  --bg-surface: rgba(255, 255, 255, 0.95);
+  --bg-surface-alt: rgba(240, 242, 244, 0.9);
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-overlay: rgba(255, 255, 255, 0.85);
+  --gradient-page: linear-gradient(180deg, #FFFFFF 0%, #F8F9FB 60%, #FFFFFF 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 247, 249, 0.9) 100%);
+  --gradient-accent: linear-gradient(120deg, #E60000 0%, #FF5A36 50%, #FFB81C 100%);
+
+  /* === TEXT === */
+  --text-primary: var(--brand-text);
+  --text-secondary: var(--gray-500);
+  --text-muted: var(--gray-400);
+  --text-inverse: var(--brand-bg);
+
+  /* === TYPOGRAPHY === */
+  --font-family-sans: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-family-mono: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-6xl: 3.75rem;     /* 60px */
+  --font-size-7xl: 4.5rem;      /* 72px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* === SPACING === */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* === BORDERS === */
+  --border-radius-sm: 0.25rem;   /* 4px */
+  --border-radius-md: 0.5rem;    /* 8px */
+  --border-radius-lg: 0.75rem;   /* 12px */
+  --border-radius-xl: 1rem;      /* 16px */
+  --border-radius-full: 9999px;
+
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+  --border-width-ultra: 6px;
+
+  --border-color: var(--gray-700);
+  --border-color-hover: var(--brand-primary);
+  --glass-border: rgba(255, 255, 255, 0.25);
+
+  /* === SHADOWS === */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 12px 30px rgba(25, 29, 39, 0.08);
+  --shadow-lg: 0 20px 45px rgba(30, 33, 45, 0.12);
+  --shadow-xl: 0 35px 70px rgba(20, 24, 32, 0.18);
+  --shadow-glow: 0 0 40px rgba(230, 0, 0, 0.45);
+  --shadow-glass: 0 20px 50px rgba(10, 11, 15, 0.35);
+
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-ultra: 650ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* === Z-INDEX === */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-grid: 800;
+  --z-glow: 700;
+
+  /* === LAYOUT === */
+  --container-max: 1200px;
+  --blur-sm: 8px;
+  --blur-md: 18px;
+  --blur-lg: 32px;
+}
+
+/* === UTILITY CLASSES === */
+.text-primary { color: var(--brand-primary); }
+.text-accent { color: var(--accent-1); }
+.text-muted { color: var(--text-muted); }
+
+.bg-primary { background-color: var(--brand-primary); }
+.bg-accent { background-color: var(--accent-1); }
+.bg-card { background-color: var(--bg-card); }
+.bg-glass { background: var(--bg-surface); backdrop-filter: blur(var(--blur-md)); border: 1px solid var(--glass-border); }
+
+.font-mono { font-family: var(--font-family-mono); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+
+.shadow-glow { box-shadow: var(--shadow-glow); }
+.shadow-glass { box-shadow: var(--shadow-glass); }
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px var(--brand-primary); }
+  50% { box-shadow: 0 0 25px var(--brand-primary); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-fadeIn { animation: fadeIn var(--transition-base) ease-in; }
+.animate-slideInUp { animation: slideInUp var(--transition-base) ease-out; }
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.animate-glow { animation: glowPulse 2s ease-in-out infinite; }

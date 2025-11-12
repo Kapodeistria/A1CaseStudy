@@ -1,0 +1,201 @@
+import { Section } from '../components/Section'
+import { Heading, Text, FlexBox, UnorderedList, ListItem, CodePane } from 'spectacle'
+
+<Section title="Deployment & Operations" subtitle="Sovereign vs. Hybrid Cloud" color="secondary" icon="☁️" />
+
+---
+
+## Deployment-Optionen
+
+<FlexBox flexDirection="row" style={{ gap: '2rem', marginTop: '2rem' }}>
+  <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '3px solid var(--brand-primary)' }}>
+    <Heading fontSize="xl" color="primary" margin="0 0 1.5rem 0">🇪🇺 Option A: Full Sovereign</Heading>
+    <UnorderedList fontSize="base" color="quinary">
+      <ListItem><strong>Azure Germany North</strong> (Frankfurt)</ListItem>
+      <ListItem>100% der Daten in EU</ListItem>
+      <ListItem>Höchste Compliance (GDPR, AI Act)</ListItem>
+      <ListItem>Customer-Managed Keys</ListItem>
+      <ListItem>Confidential Computing</ListItem>
+    </UnorderedList>
+    <FlexBox style={{ marginTop: 'auto', padding: '1rem', background: 'rgba(230, 0, 0, 0.1)', borderRadius: '8px' }}>
+      <Text fontSize="sm" color="primary" style={{ fontWeight: 700 }}>
+        ✅ Empfohlen für: Behörden mit hohen Compliance-Anforderungen
+      </Text>
+    </FlexBox>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Heading fontSize="xl" color="secondary" margin="0 0 1.5rem 0">🌐 Option B: Hybrid Cloud</Heading>
+    <UnorderedList fontSize="base" color="quinary">
+      <ListItem><strong>Azure Arc</strong> Integration</ListItem>
+      <ListItem>On-Premises für Legacy-Systeme</ListItem>
+      <ListItem>Azure Cloud für neue Workloads</ListItem>
+      <ListItem>Unified Management Plane</ListItem>
+      <ListItem>Schrittweise Migration möglich</ListItem>
+    </UnorderedList>
+    <FlexBox style={{ marginTop: 'auto', padding: '1rem', background: 'rgba(0, 174, 239, 0.1)', borderRadius: '8px' }}>
+      <Text fontSize="sm" color="secondary" style={{ fontWeight: 700 }}>
+        ✅ Empfohlen für: Schrittweise Modernisierung bestehender IT
+      </Text>
+    </FlexBox>
+  </FlexBox>
+</FlexBox>
+
+<Text fontSize="lg" color="tertiary" margin="2rem 0 0 0" style={{ textAlign: 'center', fontWeight: 600 }}>
+  💡 Beide Optionen erfüllen Daten-Souveränität, unterschiedliche Trade-offs bei Flexibilität vs. Kontrolle
+</Text>
+
+---
+
+## Infrastructure as Code
+
+<CodePane language="yaml" theme="dracula" highlightRanges={[[1, 8], [10, 16], [18, 23]]}>
+{`# Bicep (Azure-native IaC)
+resource serviceBus 'Microsoft.ServiceBus/namespaces@2022-10-01-preview' = {
+  name: 'sb-public-sector-hub-$\{env}'
+  location: 'germanywestcentral' // Frankfurt
+  sku: { name: 'Premium' }
+  properties: {
+    zoneRedundant: true
+    minimumTlsVersion: '1.3'
+  }
+}
+
+# Terraform (Multi-Cloud Alternative)
+resource "azurerm_cognitive_account" "openai" {
+  name                = "openai-$\{var.environment}"
+  location            = "germanywestcentral"
+  resource_group_name = azurerm_resource_group.main.name
+  kind                = "OpenAI"
+  sku_name            = "S0"
+
+  custom_subdomain_name = "openai-public-sector-$\{var.org_slug}"
+
+  identity {
+    type = "SystemAssigned"
+  }
+
+  public_network_access_enabled = false # Private Endpoint only
+  customer_managed_key {
+    key_vault_key_id = azurerm_key_vault_key.openai.id
+  }
+}`}
+</CodePane>
+
+---
+
+## CI/CD Pipeline
+
+<FlexBox flexDirection="column" style={{ marginTop: '2rem', padding: '0 2rem' }}>
+  <svg width="1400" height="300" viewBox="0 0 1400 300" style={{ background: 'var(--bg-card)', borderRadius: '12px', padding: '1rem' }}>
+    {/* Dev Stage */}
+    <rect x="50" y="80" width="180" height="140" fill="var(--gray-800)" stroke="var(--accent-1)" strokeWidth="2" rx="8" />
+    <text x="140" y="110" textAnchor="middle" fill="var(--accent-1)" fontSize="16" fontWeight="bold">🔨 Dev</text>
+    <text x="140" y="140" textAnchor="middle" fill="white" fontSize="12">Feature Branch</text>
+    <text x="140" y="160" textAnchor="middle" fill="white" fontSize="12">Unit Tests</text>
+    <text x="140" y="180" textAnchor="middle" fill="white" fontSize="12">Code Scan</text>
+    <text x="140" y="200" textAnchor="middle" fill="white" fontSize="12">(SonarQube)</text>
+
+    {/* Arrow */}
+    <line x1="230" y1="150" x2="280" y2="150" stroke="white" strokeWidth="2" markerEnd="url(#arrow)" />
+
+    {/* Test Stage */}
+    <rect x="280" y="80" width="180" height="140" fill="var(--gray-800)" stroke="var(--accent-1)" strokeWidth="2" rx="8" />
+    <text x="370" y="110" textAnchor="middle" fill="var(--accent-1)" fontSize="16" fontWeight="bold">🧪 Test</text>
+    <text x="370" y="140" textAnchor="middle" fill="white" fontSize="12">Integration Tests</text>
+    <text x="370" y="160" textAnchor="middle" fill="white" fontSize="12">DAST Scan</text>
+    <text x="370" y="180" textAnchor="middle" fill="white" fontSize="12">Performance</text>
+    <text x="370" y="200" textAnchor="middle" fill="white" fontSize="12">(Load Tests)</text>
+
+    {/* Arrow */}
+    <line x1="460" y1="150" x2="510" y2="150" stroke="white" strokeWidth="2" markerEnd="url(#arrow)" />
+
+    {/* Staging */}
+    <rect x="510" y="80" width="180" height="140" fill="var(--gray-800)" stroke="var(--accent-1)" strokeWidth="2" rx="8" />
+    <text x="600" y="110" textAnchor="middle" fill="var(--accent-1)" fontSize="16" fontWeight="bold">📦 Staging</text>
+    <text x="600" y="140" textAnchor="middle" fill="white" fontSize="12">Blue-Green Deploy</text>
+    <text x="600" y="160" textAnchor="middle" fill="white" fontSize="12">UAT</text>
+    <text x="600" y="180" textAnchor="middle" fill="white" fontSize="12">Compliance Checks</text>
+    <text x="600" y="200" textAnchor="middle" fill="white" fontSize="12">(Policy Validation)</text>
+
+    {/* Arrow */}
+    <line x1="690" y1="150" x2="740" y2="150" stroke="white" strokeWidth="2" markerEnd="url(#arrow)" />
+    <text x="715" y="135" textAnchor="middle" fill="var(--accent-2)" fontSize="11" fontWeight="bold">Manual</text>
+    <text x="715" y="170" textAnchor="middle" fill="var(--accent-2)" fontSize="11" fontWeight="bold">Approval</text>
+
+    {/* Production */}
+    <rect x="740" y="80" width="180" height="140" fill="var(--gray-800)" stroke="var(--brand-primary)" strokeWidth="3" rx="8" />
+    <text x="830" y="110" textAnchor="middle" fill="var(--brand-primary)" fontSize="16" fontWeight="bold">🚀 Production</text>
+    <text x="830" y="140" textAnchor="middle" fill="white" fontSize="12">Canary Deploy</text>
+    <text x="830" y="160" textAnchor="middle" fill="white" fontSize="12">Health Checks</text>
+    <text x="830" y="180" textAnchor="middle" fill="white" fontSize="12">Auto-Rollback</text>
+    <text x="830" y="200" textAnchor="middle" fill="white" fontSize="12">(if errors)</text>
+
+    {/* Arrow */}
+    <line x1="920" y1="150" x2="970" y2="150" stroke="white" strokeWidth="2" markerEnd="url(#arrow)" />
+
+    {/* Monitoring */}
+    <rect x="970" y="80" width="180" height="140" fill="var(--gray-800)" stroke="var(--color-success)" strokeWidth="2" rx="8" />
+    <text x="1060" y="110" textAnchor="middle" fill="var(--color-success)" fontSize="16" fontWeight="bold">👁️ Monitor</text>
+    <text x="1060" y="140" textAnchor="middle" fill="white" fontSize="12">Azure Monitor</text>
+    <text x="1060" y="160" textAnchor="middle" fill="white" fontSize="12">App Insights</text>
+    <text x="1060" y="180" textAnchor="middle" fill="white" fontSize="12">Sentinel SIEM</text>
+    <text x="1060" y="200" textAnchor="middle" fill="white" fontSize="12">(Security)</text>
+
+    {/* Feedback Loop */}
+    <path d="M 1060 220 Q 1060 260, 550 260 Q 140 260, 140 220" stroke="var(--accent-2)" strokeWidth="2" fill="none" strokeDasharray="5,5" markerEnd="url(#arrow)" />
+    <text x="600" y="280" textAnchor="middle" fill="var(--accent-2)" fontSize="13" fontWeight="bold">Continuous Feedback Loop</text>
+
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="white" />
+      </marker>
+    </defs>
+  </svg>
+</FlexBox>
+
+<Text fontSize="sm" color="quinary" margin="1.5rem 0 0 0" style={{ textAlign: 'center' }}>
+  GitHub Actions oder Azure DevOps • Bicep/Terraform für IaC • Policy-as-Code mit Azure Policy • Secrets in Key Vault
+</Text>
+
+---
+
+## Kostenoptimierung
+
+<FlexBox flexDirection="row" style={{ gap: '2rem', marginTop: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+  <FlexBox flexDirection="column" style={{ flex: '1 1 300px', maxWidth: '350px', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px' }}>
+    <Text fontSize="2xl" margin="0 0 0.75rem 0">💰</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 0.75rem 0">Reserved Instances</Heading>
+    <Text fontSize="sm" color="quinary">
+      1- oder 3-Jahres Commitments für Azure SQL, VMs → <strong style={{ color: 'var(--color-success)' }}>bis zu 72% Ersparnis</strong>
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 300px', maxWidth: '350px', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px' }}>
+    <Text fontSize="2xl" margin="0 0 0.75rem 0">📊</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 0.75rem 0">Auto-Scaling</Heading>
+    <Text fontSize="sm" color="quinary">
+      Automatische Skalierung basierend auf Workload → <strong style={{ color: 'var(--color-success)' }}>30-50% Kosten-Reduktion</strong> außerhalb Spitzenzeiten
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 300px', maxWidth: '350px', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px' }}>
+    <Text fontSize="2xl" margin="0 0 0.75rem 0">🕒</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 0.75rem 0">Dev/Test Pricing</Heading>
+    <Text fontSize="sm" color="quinary">
+      Spezielle Tarife für Non-Prod Environments → <strong style={{ color: 'var(--color-success)' }}>bis zu 55% günstiger</strong> als Production
+    </Text>
+  </FlexBox>
+</FlexBox>
+
+---
+
+<Notes>
+  - Deployment-Optionen je nach Compliance-Level der Behörde
+  - Full Sovereign = Maximum Security, Hybrid = Maximum Flexibilität
+  - Azure Germany North: Physisch in Frankfurt, betrieben von T-Systems
+  - IaC essentiell für reproduzierbare, sichere Deployments
+  - CI/CD mit eingebauten Security Gates (SAST, DAST, Policy Validation)
+  - Blue-Green und Canary Deployments für Zero-Downtime Updates
+  - Kostenoptimierung durch Reserved Instances + Auto-Scaling
+</Notes>

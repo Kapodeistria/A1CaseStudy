@@ -1,0 +1,171 @@
+/* Version Selector - A1 Style */
+.version-selector {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.selector-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.selector-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.selector-header h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #E60000, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.selector-subtitle {
+  font-size: 1.5rem;
+  color: #b8b8b8;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.selector-tagline {
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 300;
+}
+
+.selector-divider {
+  width: 80px;
+  height: 3px;
+  background: #E60000;
+  margin: 2rem auto;
+}
+
+.versions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.version-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(230, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 3rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.version-card:hover {
+  border-color: #E60000;
+  background: rgba(230, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(230, 0, 0, 0.3);
+}
+
+.version-badge {
+  display: inline-block;
+  background: #E60000;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.version-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 400;
+}
+
+.version-card p {
+  font-size: 1.1rem;
+  color: #b8b8b8;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.version-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.version-card li {
+  padding: 0.5rem 0;
+  color: #888;
+  font-size: 1rem;
+}
+
+.version-card li::before {
+  content: '✓';
+  color: #E60000;
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+
+.version-button {
+  background: #E60000;
+  color: white;
+  border: 2px solid #E60000;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.version-button:hover {
+  background: transparent;
+  transform: scale(1.05);
+}
+
+.selector-footer {
+  text-align: center;
+  color: #666;
+  margin-top: 3rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.selector-footer p {
+  margin: 0.25rem 0;
+}
+
+.selector-footer strong {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .selector-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .selector-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .version-card {
+    padding: 2rem;
+  }
+
+  .version-card h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "public-sector-ai-service-hub-presentation",
+  "version": "1.0.0",
+  "description": "React/Spectacle presentation for Public Sector AI-enabled Service Hub with data sovereignty",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "extract": "node scripts/extract-assets.mjs",
+    "serve": "node scripts/build-and-serve.mjs",
+    "deploy:azure": "npm run build && echo 'Upload dist/ to Azure Static Web Apps or Blob Storage' && echo 'See README.md for detailed instructions'",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.22.3",
+    "spectacle": "^10.1.8"
+  },
+  "devDependencies": {
+    "@mdx-js/rollup": "^3.0.1",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "remark-gfm": "^4.0.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "presentation",
+    "spectacle",
+    "react",
+    "vite",
+    "mdx",
+    "public-sector",
+    "ai",
+    "azure",
+    "a1-telekom"
+  ],
+  "author": {
+    "name": "Christos Kapodistrias",
+    "email": "kapodeistria@pm.me"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

@@ -1,0 +1,137 @@
+import { Section } from '../components/Section'
+import { Heading, Text, FlexBox, UnorderedList, ListItem, CodePane } from 'spectacle'
+
+<Section title="AI & Machine Learning" subtitle="Intelligente Automatisierung" color="tertiary" icon="🧠" />
+
+---
+
+## Use Case: Automatische Antragsbearbeitung
+
+<FlexBox flexDirection="column" alignItems="flex-start" style={{ marginTop: '2rem', padding: '0 3rem' }}>
+  <Heading fontSize="2xl" color="primary" margin="0 0 2rem 0">
+    Beispiel: Gewerbeanmeldung digital
+  </Heading>
+
+  <FlexBox flexDirection="row" style={{ gap: '2rem', width: '100%' }}>
+    <FlexBox flexDirection="column" style={{ flex: 1 }}>
+      <Text fontSize="xl" color="secondary" margin="0 0 1rem 0" style={{ fontWeight: 700 }}>
+        1️⃣ Dokumenten-Upload
+      </Text>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem>Bürger lädt Personalausweis, Gewerbeunterlagen hoch</ListItem>
+        <ListItem>Form Recognizer extrahiert strukturierte Daten</ListItem>
+        <ListItem>Automatische Validierung (Pflichtfelder, Formate)</ListItem>
+      </UnorderedList>
+
+      <Text fontSize="xl" color="secondary" margin="2rem 0 1rem 0" style={{ fontWeight: 700 }}>
+        2️⃣ KI-Prüfung
+      </Text>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem>GPT-4 analysiert Vollständigkeit & Plausibilität</ListItem>
+        <ListItem>Automatischer Abgleich mit Handelsregister-APIs</ListItem>
+        <ListItem>Risiko-Score für manuelle Nachprüfung</ListItem>
+      </UnorderedList>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" style={{ flex: 1 }}>
+      <Text fontSize="xl" color="secondary" margin="0 0 1rem 0" style={{ fontWeight: 700 }}>
+        3️⃣ Automatische Entscheidung
+      </Text>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem>90% der Anträge automatisch genehmigt</ListItem>
+        <ListItem>Komplexe Fälle an Sachbearbeiter geroutet</ListItem>
+        <ListItem>Echzeit-Status-Updates an Bürger</ListItem>
+      </UnorderedList>
+
+      <Text fontSize="xl" color="secondary" margin="2rem 0 1rem 0" style={{ fontWeight: 700 }}>
+        4️⃣ Transparenz & Audit
+      </Text>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem>Jede KI-Entscheidung dokumentiert & erklärbar</ListItem>
+        <ListItem>GDPR Right to Explanation erfüllt</ListItem>
+        <ListItem>Audit-Trail für Compliance</ListItem>
+      </UnorderedList>
+    </FlexBox>
+  </FlexBox>
+</FlexBox>
+
+---
+
+## AI-Modell Integration
+
+<CodePane language="typescript" theme="dracula" highlightRanges={[[2, 5], [8, 11], [14, 18]]}>
+{`// Azure OpenAI Integration (Sovereign Cloud)
+const client = new OpenAIClient(
+  process.env.AZURE_OPENAI_ENDPOINT!, // Germany North Region
+  new AzureKeyCredential(process.env.AZURE_OPENAI_KEY!)
+)
+
+// Prompt Engineering für Antragsprüfung
+const response = await client.getChatCompletions(
+  "gpt-4-32k", // High context for complex documents
+  messages,
+  { temperature: 0.2, maxTokens: 2000 } // Low temp = deterministic
+)
+
+// Explainable AI: Reason + Confidence Score
+interface AIDecision {
+  approved: boolean
+  confidence: number // 0.0 - 1.0
+  reasoning: string[] // Step-by-step explanation
+  flaggedIssues?: string[] // For manual review
+  complianceChecks: Record<string, boolean>
+}`}
+</CodePane>
+
+<Text fontSize="base" color="tertiary" margin="2rem 0 0 0" style={{ textAlign: 'center' }}>
+  ✅ AI Act Compliance: High-Risk AI System mit Human-in-the-Loop für kritische Entscheidungen
+</Text>
+
+---
+
+## Weitere AI Use Cases
+
+<FlexBox flexDirection="row" style={{ gap: '2rem', marginTop: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+  <FlexBox flexDirection="column" style={{ flex: '1 1 280px', background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="3xl" margin="0 0 1rem 0">💬</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 1rem 0">Chatbot-Assistent</Heading>
+    <Text fontSize="sm" color="quinary">
+      24/7 Bürger-Support, FAQ-Beantwortung, Antragsführung, Mehrsprachig (DE/EN/weitere)
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 280px', background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="3xl" margin="0 0 1rem 0">📊</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 1rem 0">Predictive Analytics</Heading>
+    <Text fontSize="sm" color="quinary">
+      Vorhersage Antragsvolumen, Ressourcenplanung, Früherkennung Betrugsversuche
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 280px', background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="3xl" margin="0 0 1rem 0">🔍</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 1rem 0">Semantic Search</Heading>
+    <Text fontSize="sm" color="quinary">
+      Durchsuchung von Gesetzestexten, Präzedenzfällen, internen Wissensdatenbanken
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 280px', background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="3xl" margin="0 0 1rem 0">✍️</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 1rem 0">Dokumenten-Generation</Heading>
+    <Text fontSize="sm" color="quinary">
+      Automatische Erstellung Bescheide, Briefe, Reports basierend auf Vorlagen
+    </Text>
+  </FlexBox>
+</FlexBox>
+
+---
+
+<Notes>
+  - Fokus auf High-Value Use Cases (70% Zeitersparnis realistisch)
+  - Gewerbeanmeldung als Paradebeispiel: Standard-Prozess, hohe Frequenz
+  - Form Recognizer erreicht 95%+ Genauigkeit bei strukturierten Dokumenten
+  - GPT-4 für Plausibilitätsprüfung und komplexe Regelwerke
+  - Confidential Computing für KI-Workloads schützt sensitive Daten während Verarbeitung
+  - Explainable AI essentiell für Public Sector (Vertrauen + Compliance)
+</Notes>

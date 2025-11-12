@@ -1,0 +1,66 @@
+import { Section } from '../components/Section'
+import { KPI, KPIGrid } from '../components/KPI'
+import { Heading, Text, FlexBox } from 'spectacle'
+
+<Section title="Vision & Value Proposition" subtitle="Der AI-Enabled Service Hub" color="secondary" icon="🚀" />
+
+---
+
+## Unsere Lösung: Intelligenter Service Hub
+
+<FlexBox flexDirection="column" alignItems="center" style={{ marginTop: '2rem' }}>
+  <Text fontSize="xl" color="quinary" margin="0 0 3rem 0" style={{ textAlign: 'center', maxWidth: '80%' }}>
+    Eine <Text color="primary" style={{ display: 'inline', fontWeight: 700 }}>souveräne Cloud-Plattform</Text>
+    {' '}für KI-gestützte Verwaltungsservices – gebaut auf Azure, gehostet in Österreich/Deutschland,
+    konform mit GDPR & AI Act.
+  </Text>
+
+  <KPIGrid>
+    <KPI value="70%" label="Prozesszeit-Reduktion" sublabel="bei Antragsbearbeitung" color="primary" icon="⚡" trend="down" />
+    <KPI value="24/7" label="Verfügbarkeit" sublabel="Bürgerservices" color="secondary" icon="🌐" trend="neutral" />
+    <KPI value="100%" label="GDPR & AI Act Compliance" sublabel="ab Tag 1" color="quaternary" icon="✓" trend="neutral" />
+  </KPIGrid>
+</FlexBox>
+
+---
+
+## Kernfunktionen
+
+<FlexBox flexDirection="row" style={{ gap: '2rem', marginTop: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+  <FlexBox flexDirection="column" style={{ flex: '1 1 300px', background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--brand-primary)' }}>
+    <Text fontSize="3xl" margin="0 0 1rem 0">🤖</Text>
+    <Heading fontSize="xl" color="primary" margin="0 0 1rem 0">AI-Assistenten</Heading>
+    <Text fontSize="base" color="quinary" style={{ opacity: 0.9 }}>
+      GPT-4 basierte Chatbots für Bürgeranfragen, Dokumentenanalyse mit Form Recognizer,
+      automatische Antragsprüfung
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 300px', background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="3xl" margin="0 0 1rem 0">🔐</Text>
+    <Heading fontSize="xl" color="secondary" margin="0 0 1rem 0">Daten-Souveränität</Heading>
+    <Text fontSize="base" color="quinary" style={{ opacity: 0.9 }}>
+      Azure Germany/Austria Regions, Ende-zu-Ende Verschlüsselung,
+      Confidential Computing für KI-Workloads
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 300px', background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-2)' }}>
+    <Text fontSize="3xl" margin="0 0 1rem 0">📊</Text>
+    <Heading fontSize="xl" color="tertiary" margin="0 0 1rem 0">Analytics & Insights</Heading>
+    <Text fontSize="base" color="quinary" style={{ opacity: 0.9 }}>
+      Echtzeit-Dashboards, Predictive Analytics für Ressourcenplanung,
+      Transparenz-Reports für Bürger
+    </Text>
+  </FlexBox>
+</FlexBox>
+
+---
+
+<Notes>
+  - Vision: Moderne Verwaltung durch KI-gestützte Services
+  - Value Prop: Effizienz + Compliance + Bürgerzufriedenheit
+  - 70% Zeitersparnis realistisch bei Standardanträgen (z.B. Gewerbeanmeldung, Baugenehmigung)
+  - 24/7 Verfügbarkeit durch Chatbots entlastet Mitarbeiter für komplexe Fälle
+  - GDPR/AI Act Compliance durch Design (Privacy by Design, Explainable AI)
+</Notes>

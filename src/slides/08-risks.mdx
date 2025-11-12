@@ -1,0 +1,228 @@
+import { Section } from '../components/Section'
+import { Heading, Text, FlexBox, Table, TableHeader, TableBody, TableRow, TableCell } from 'spectacle'
+
+<Section title="Risiken & Mitigations" subtitle="Proaktives Risikomanagement" color="primary" icon="⚠️" />
+
+---
+
+## Identifizierte Risiken & Gegenmaßnahmen
+
+<FlexBox flexDirection="column" style={{ marginTop: '2rem', padding: '0 2rem' }}>
+  <Table style={{ fontSize: '0.9rem' }}>
+    <TableHeader>
+      <TableRow style={{ background: 'var(--brand-primary)' }}>
+        <TableCell style={{ padding: '0.75rem', fontWeight: 700, color: 'white', width: '25%' }}>Risiko</TableCell>
+        <TableCell style={{ padding: '0.75rem', fontWeight: 700, color: 'white', width: '12%' }}>Impact</TableCell>
+        <TableCell style={{ padding: '0.75rem', fontWeight: 700, color: 'white', width: '12%' }}>Wahrsch.</TableCell>
+        <TableCell style={{ padding: '0.75rem', fontWeight: 700, color: 'white', width: '51%' }}>Mitigation</TableCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow style={{ background: 'var(--bg-card)' }}>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+          🔴 AI-Modell Bias / Diskriminierung
+        </TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-danger)', textAlign: 'center', fontWeight: 700 }}>HOCH</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          Diverse Training-Daten, Fairness-Tests, Human-in-the-Loop für finale Entscheidungen, Bias-Monitoring-Dashboard
+        </TableCell>
+      </TableRow>
+
+      <TableRow style={{ background: 'var(--bg-secondary)' }}>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+          🟠 Daten-Breach / Cyberangriff
+        </TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-danger)', textAlign: 'center', fontWeight: 700 }}>HOCH</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-success)', textAlign: 'center', fontWeight: 700 }}>NIEDRIG</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          Zero Trust Architecture, Confidential Computing, 24/7 SOC (Sentinel), Penetration Tests quartalsweise, Incident Response Plan
+        </TableCell>
+      </TableRow>
+
+      <TableRow style={{ background: 'var(--bg-card)' }}>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+          🟡 Vendor Lock-in (Azure)
+        </TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-danger)', textAlign: 'center', fontWeight: 700 }}>HOCH</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          Open Standards (REST APIs, PostgreSQL-kompatibel), Container-basiert (Kubernetes), IaC (Terraform für Multi-Cloud), Exit-Strategie dokumentiert
+        </TableCell>
+      </TableRow>
+
+      <TableRow style={{ background: 'var(--bg-secondary)' }}>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+          🟢 Change Management / User Adoption
+        </TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          Frühzeitige Stakeholder-Einbindung, Change Champions Programm, Training (Rolle-basiert), Pilot mit Early Adopters, Feedback-Loops
+        </TableCell>
+      </TableRow>
+
+      <TableRow style={{ background: 'var(--bg-card)' }}>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+          🔵 Compliance-Verstöße (GDPR/AI Act)
+        </TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-danger)', textAlign: 'center', fontWeight: 700 }}>HOCH</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-success)', textAlign: 'center', fontWeight: 700 }}>NIEDRIG</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          Privacy by Design, DPIA durchgeführt, Legal Review jedes Release, Automatisierte Compliance-Checks (Policy-as-Code), Datenschutzbeauftragter involviert
+        </TableCell>
+      </TableRow>
+
+      <TableRow style={{ background: 'var(--bg-secondary)' }}>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+          🟣 Budget-Überschreitung
+        </TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          Cost Management Dashboards (Azure Cost Management), Budget Alerts, Reserved Instances (3y), Spot VMs für Dev/Test, monatliche Cost Reviews
+        </TableCell>
+      </TableRow>
+
+      <TableRow style={{ background: 'var(--bg-card)' }}>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+          🟤 Performance / Skalierung
+        </TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-success)', textAlign: 'center', fontWeight: 700 }}>NIEDRIG</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          Auto-Scaling aktiviert, CDN für statische Assets, Caching-Strategie (Redis), Load Tests vor Produktion, APM (Application Insights)
+        </TableCell>
+      </TableRow>
+
+      <TableRow style={{ background: 'var(--bg-secondary)' }}>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+          ⚫ Legacy-Integration scheitert
+        </TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--color-warning)', textAlign: 'center', fontWeight: 700 }}>MITTEL</TableCell>
+        <TableCell style={{ padding: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          Frühzeitige Architektur-Analyse, Azure Arc für Hybrid, API Gateway als Abstraktions-Layer, Phased Rollout (nicht Big Bang), Fallback-Strategie
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</FlexBox>
+
+---
+
+## Risiko-Matrix
+
+<FlexBox flexDirection="column" alignItems="center" style={{ marginTop: '2rem' }}>
+  <svg width="800" height="600" viewBox="0 0 800 600" style={{ background: 'var(--bg-card)', borderRadius: '12px', padding: '2rem' }}>
+    {/* Grid */}
+    <line x1="150" y1="50" x2="150" y2="550" stroke="white" strokeWidth="2" />
+    <line x1="150" y1="550" x2="750" y2="550" stroke="white" strokeWidth="2" />
+
+    {/* Y-Axis Labels */}
+    <text x="80" y="150" fill="white" fontSize="14" textAnchor="middle">HOCH</text>
+    <text x="80" y="300" fill="white" fontSize="14" textAnchor="middle">MITTEL</text>
+    <text x="80" y="520" fill="white" fontSize="14" textAnchor="middle">NIEDRIG</text>
+    <text x="40" y="300" fill="white" fontSize="16" fontWeight="bold" textAnchor="middle" transform="rotate(-90 40 300)">IMPACT</text>
+
+    {/* X-Axis Labels */}
+    <text x="300" y="590" fill="white" fontSize="14" textAnchor="middle">NIEDRIG</text>
+    <text x="450" y="590" fill="white" fontSize="14" textAnchor="middle">MITTEL</text>
+    <text x="650" y="590" fill="white" fontSize="14" textAnchor="middle">HOCH</text>
+    <text x="450" y="610" fill="white" fontSize="16" fontWeight="bold" textAnchor="middle">WAHRSCHEINLICHKEIT</text>
+
+    {/* Grid Lines */}
+    <line x1="150" y1="200" x2="750" y2="200" stroke="var(--gray-700)" strokeWidth="1" strokeDasharray="5,5" />
+    <line x1="150" y1="375" x2="750" y2="375" stroke="var(--gray-700)" strokeWidth="1" strokeDasharray="5,5" />
+    <line x1="375" y1="50" x2="375" y2="550" stroke="var(--gray-700)" strokeWidth="1" strokeDasharray="5,5" />
+    <line x1="562" y1="50" x2="562" y2="550" stroke="var(--gray-700)" strokeWidth="1" strokeDasharray="5,5" />
+
+    {/* Zones */}
+    <rect x="150" y="50" width="225" height="150" fill="rgba(255, 184, 28, 0.1)" />
+    <rect x="375" y="50" width="187" height="150" fill="rgba(230, 0, 0, 0.1)" />
+    <rect x="562" y="50" width="188" height="150" fill="rgba(230, 0, 0, 0.2)" />
+
+    {/* Risk Points */}
+    {/* AI Bias: Hoch Impact, Mittel Wahrsch. */}
+    <circle cx="450" cy="125" r="25" fill="var(--color-danger)" opacity="0.8" />
+    <text x="450" y="132" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">AI Bias</text>
+
+    {/* Data Breach: Hoch Impact, Niedrig Wahrsch. */}
+    <circle cx="300" cy="125" r="25" fill="var(--color-warning)" opacity="0.8" />
+    <text x="300" y="132" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">Breach</text>
+
+    {/* Vendor Lock: Mittel Impact, Hoch Wahrsch. */}
+    <circle cx="650" cy="300" r="25" fill="var(--color-warning)" opacity="0.8" />
+    <text x="650" y="307" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">Lock-in</text>
+
+    {/* Change Mgmt: Mittel Impact, Mittel Wahrsch. */}
+    <circle cx="450" cy="300" r="25" fill="var(--color-warning)" opacity="0.8" />
+    <text x="450" y="307" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">Change</text>
+
+    {/* Compliance: Hoch Impact, Niedrig Wahrsch. */}
+    <circle cx="300" cy="125" r="20" fill="var(--accent-1)" opacity="0.6" />
+    <text x="300" y="110" textAnchor="middle" fill="var(--accent-1)" fontSize="10" fontWeight="bold">Compliance</text>
+
+    {/* Budget: Mittel Impact, Mittel Wahrsch. */}
+    <circle cx="480" cy="320" r="20" fill="var(--accent-2)" opacity="0.6" />
+    <text x="480" y="327" textAnchor="middle" fill="black" fontSize="10" fontWeight="bold">Budget</text>
+
+    {/* Performance: Mittel Impact, Niedrig Wahrsch. */}
+    <circle cx="280" cy="300" r="20" fill="var(--color-success)" opacity="0.6" />
+    <text x="280" y="307" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Perf</text>
+
+    {/* Legacy: Mittel Impact, Mittel Wahrsch. */}
+    <circle cx="420" cy="320" r="20" fill="var(--gray-600)" opacity="0.8" />
+    <text x="420" y="327" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Legacy</text>
+  </svg>
+</FlexBox>
+
+---
+
+## Kontinuierliches Risiko-Monitoring
+
+<FlexBox flexDirection="row" style={{ gap: '2rem', marginTop: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+  <FlexBox flexDirection="column" style={{ flex: '1 1 280px', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="2xl" margin="0 0 0.75rem 0">📊</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 0.75rem 0">Risk Dashboard</Heading>
+    <Text fontSize="sm" color="quinary">
+      Real-time Übersicht aller Risiken, Status-Updates, Trend-Analyse (monatlich reviewt von PMO)
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 280px', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="2xl" margin="0 0 0.75rem 0">🚨</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 0.75rem 0">Eskalations-Prozess</Heading>
+    <Text fontSize="sm" color="quinary">
+      Definierte Trigger für Eskalation an Steering Committee, klare Rollen & Verantwortlichkeiten (RACI)
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 280px', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="2xl" margin="0 0 0.75rem 0">🔄</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 0.75rem 0">Lessons Learned</Heading>
+    <Text fontSize="sm" color="quinary">
+      Retrospektiven nach jedem Sprint/Milestone, Dokumentation in Knowledge Base, kontinuierliche Verbesserung
+    </Text>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: '1 1 280px', background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+    <Text fontSize="2xl" margin="0 0 0.75rem 0">🛡️</Text>
+    <Heading fontSize="lg" color="secondary" margin="0 0 0.75rem 0">Contingency Plans</Heading>
+    <Text fontSize="sm" color="quinary">
+      Fallback-Strategien für Top 3 Risiken vorbereitet, Business Continuity Plan, Disaster Recovery getestet
+    </Text>
+  </FlexBox>
+</FlexBox>
+
+---
+
+<Notes>
+  - Proaktives Risikomanagement essentiell für Public Sector Projekte
+  - AI Bias ist größtes Reputations-Risiko, deshalb Human-in-the-Loop zwingend
+  - Vendor Lock-in durch Open Standards und Container minimieren
+  - Change Management oft unterschätzt - 70% der Digital Transformations scheitern an People
+  - Compliance-Risiko durch Privacy by Design und Legal Review minimiert
+  - Risk Matrix zeigt: Meiste Risiken im gelben Bereich (manageable)
+  - Kontinuierliches Monitoring wichtiger als initiale Risk Assessment
+</Notes>

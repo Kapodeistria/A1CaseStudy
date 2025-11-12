@@ -1,0 +1,282 @@
+import { Section } from '../components/Section'
+import { Heading, Text, FlexBox, UnorderedList, ListItem } from 'spectacle'
+import { KPI, KPIGrid } from '../components/KPI'
+
+<Section title="Call to Action" subtitle="Nächste Schritte & Empfehlung" color="primary" icon="🚀" />
+
+---
+
+## Strategische Empfehlung
+
+<FlexBox flexDirection="column" alignItems="center" style={{ marginTop: '2rem', padding: '0 3rem' }}>
+  <FlexBox
+    flexDirection="column"
+    alignItems="center"
+    style={{
+      background: 'radial-gradient(circle, rgba(230, 0, 0, 0.2) 0%, transparent 70%)',
+      border: '3px solid var(--brand-primary)',
+      borderRadius: '16px',
+      padding: '3rem',
+      maxWidth: '900px',
+      boxShadow: '0 0 40px rgba(230, 0, 0, 0.3)'
+    }}
+  >
+    <Heading fontSize="3xl" color="primary" margin="0 0 2rem 0" style={{ textAlign: 'center' }}>
+      ✅ GO-Entscheidung für AI-Enabled Service Hub
+    </Heading>
+
+    <Text fontSize="xl" color="quinary" margin="0 0 2rem 0" style={{ textAlign: 'center', lineHeight: 1.6 }}>
+      Wir empfehlen die <Text color="primary" style={{ display: 'inline', fontWeight: 700 }}>sofortige Umsetzung</Text> des
+      AI-Enabled Service Hub auf Basis von <Text color="secondary" style={{ display: 'inline', fontWeight: 700 }}>Azure Sovereign Cloud</Text>.
+    </Text>
+
+    <FlexBox flexDirection="row" style={{ gap: '2rem', width: '100%' }}>
+      <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px' }}>
+        <Heading fontSize="lg" color="secondary" margin="0 0 1rem 0">🎯 Warum JETZT?</Heading>
+        <UnorderedList fontSize="base" color="quinary">
+          <ListItem>EU AI Act tritt August 2026 in Kraft</ListItem>
+          <ListItem>Bürger erwarten digitale Services</ListItem>
+          <ListItem>First-Mover Advantage im Public Sector</ListItem>
+          <ListItem>Budget-Freigaben für Q1 2025</ListItem>
+        </UnorderedList>
+      </FlexBox>
+
+      <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '1.5rem', borderRadius: '12px' }}>
+        <Heading fontSize="lg" color="quaternary" margin="0 0 1rem 0">💡 Warum DIESE Lösung?</Heading>
+        <UnorderedList fontSize="base" color="quinary">
+          <ListItem>100% GDPR & AI Act konform</ListItem>
+          <ListItem>Datensouveränität garantiert</ListItem>
+          <ListItem>Proven Tech Stack (Azure)</ListItem>
+          <ListItem>312% ROI in 3 Jahren</ListItem>
+        </UnorderedList>
+      </FlexBox>
+    </FlexBox>
+  </FlexBox>
+</FlexBox>
+
+---
+
+## Nächste Schritte: 90-Tage-Plan
+
+<FlexBox flexDirection="column" style={{ marginTop: '2rem', padding: '0 3rem' }}>
+  <FlexBox flexDirection="row" style={{ gap: '2rem', marginBottom: '2rem' }}>
+    <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '3px solid var(--brand-primary)' }}>
+      <FlexBox alignItems="center" style={{ marginBottom: '1rem' }}>
+        <Text fontSize="4xl" margin="0 1rem 0 0">1️⃣</Text>
+        <Heading fontSize="xl" color="primary" margin="0">Tage 1-30: Discovery</Heading>
+      </FlexBox>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem><strong>Kick-off Workshop</strong> mit Stakeholdern</ListItem>
+        <ListItem><strong>Requirements Deep-Dive</strong> (funktional + nicht-funktional)</ListItem>
+        <ListItem><strong>Legacy-System Analyse</strong> (Integrations-Optionen)</ListItem>
+        <ListItem><strong>Proof of Concept</strong> (Azure OpenAI + Form Recognizer)</ListItem>
+        <ListItem><strong>DPIA & Legal Review</strong> (Datenschutzbeauftragter)</ListItem>
+      </UnorderedList>
+      <Text fontSize="sm" color="tertiary" margin="1rem 0 0 0" style={{ fontWeight: 600 }}>
+        Deliverable: Detailed Design Document + PoC Demo
+      </Text>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-1)' }}>
+      <FlexBox alignItems="center" style={{ marginBottom: '1rem' }}>
+        <Text fontSize="4xl" margin="0 1rem 0 0">2️⃣</Text>
+        <Heading fontSize="xl" color="secondary" margin="0">Tage 31-60: Build</Heading>
+      </FlexBox>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem><strong>Azure Landing Zone</strong> Setup (IaC mit Bicep)</ListItem>
+        <ListItem><strong>MVP Development</strong> (1 Use Case: Gewerbeanmeldung)</ListItem>
+        <ListItem><strong>CI/CD Pipeline</strong> (GitHub Actions / Azure DevOps)</ListItem>
+        <ListItem><strong>Security Hardening</strong> (Sentinel, Pen-Tests)</ListItem>
+        <ListItem><strong>Training Material</strong> (Dokumentation, Videos)</ListItem>
+      </UnorderedList>
+      <Text fontSize="sm" color="tertiary" margin="1rem 0 0 0" style={{ fontWeight: 600 }}>
+        Deliverable: MVP in Staging-Umgebung + Schulungen
+      </Text>
+    </FlexBox>
+  </FlexBox>
+
+  <FlexBox flexDirection="row" style={{ gap: '2rem' }}>
+    <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--color-success)' }}>
+      <FlexBox alignItems="center" style={{ marginBottom: '1rem' }}>
+        <Text fontSize="4xl" margin="0 1rem 0 0">3️⃣</Text>
+        <Heading fontSize="xl" color="quaternary" margin="0">Tage 61-90: Pilot</Heading>
+      </FlexBox>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem><strong>Pilot Launch</strong> mit 2 Behörden (Early Adopters)</ListItem>
+        <ListItem><strong>User Acceptance Testing</strong> (Real-world Szenarien)</ListItem>
+        <ListItem><strong>Performance Tuning</strong> (Load Tests, Optimierung)</ListItem>
+        <ListItem><strong>Feedback Collection</strong> (Surveys, Interviews)</ListItem>
+        <ListItem><strong>Go-Live Readiness Review</strong> (Steering Committee)</ListItem>
+      </UnorderedList>
+      <Text fontSize="sm" color="tertiary" margin="1rem 0 0 0" style={{ fontWeight: 600 }}>
+        Deliverable: Production-Ready System + Rollout-Plan
+      </Text>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '2px solid var(--accent-2)' }}>
+      <FlexBox alignItems="center" style={{ marginBottom: '1rem' }}>
+        <Text fontSize="4xl" margin="0 1rem 0 0">4️⃣</Text>
+        <Heading fontSize="xl" color="tertiary" margin="0">Tag 91+: Rollout</Heading>
+      </FlexBox>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem><strong>Phased Rollout</strong> (Region für Region)</ListItem>
+        <ListItem><strong>Change Management</strong> (Training, Support)</ListItem>
+        <ListItem><strong>Continuous Improvement</strong> (neue Use Cases)</ListItem>
+        <ListItem><strong>Scale-Up</strong> (mehr Behörden, mehr Services)</ListItem>
+        <ListItem><strong>Success Metrics</strong> (KPI-Tracking, ROI-Reporting)</ListItem>
+      </UnorderedList>
+      <Text fontSize="sm" color="tertiary" margin="1rem 0 0 0" style={{ fontWeight: 600 }}>
+        Deliverable: Production @ Scale + Case Study
+      </Text>
+    </FlexBox>
+  </FlexBox>
+</FlexBox>
+
+---
+
+## Investment-Übersicht
+
+<FlexBox flexDirection="column" alignItems="center" style={{ marginTop: '2rem' }}>
+  <KPIGrid>
+    <KPI value="€120K" label="Initial Investment" sublabel="Discovery + MVP (90 Tage)" color="primary" icon="💰" size="large" />
+    <KPI value="€16K" label="Monatliche Azure-Kosten" sublabel="ab Produktiv-Betrieb" color="secondary" icon="☁️" size="large" />
+    <KPI value="18 Monate" label="Break-Even" sublabel="Return on Investment" color="quaternary" icon="📈" size="large" />
+  </KPIGrid>
+
+  <FlexBox flexDirection="row" style={{ gap: '3rem', marginTop: '3rem', width: '100%', maxWidth: '1000px' }}>
+    <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px' }}>
+      <Heading fontSize="lg" color="secondary" margin="0 0 1.5rem 0">📦 Im Paket enthalten</Heading>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem>Azure Landing Zone Setup</ListItem>
+        <ListItem>MVP (1 Use Case) inkl. AI-Integration</ListItem>
+        <ListItem>CI/CD Pipeline + IaC</ListItem>
+        <ListItem>Security Audit + Pen-Test</ListItem>
+        <ListItem>Training (Admin + End-User)</ListItem>
+        <ListItem>3 Monate Hypercare Support</ListItem>
+      </UnorderedList>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px' }}>
+      <Heading fontSize="lg" color="tertiary" margin="0 0 1.5rem 0">🎯 Erfolgs-Kriterien</Heading>
+      <UnorderedList fontSize="base" color="quinary">
+        <ListItem>70% Zeitersparnis bei Standardanträgen</ListItem>
+        <ListItem>99.9% Verfügbarkeit (SLA)</ListItem>
+        <ListItem>80%+ User Satisfaction Score</ListItem>
+        <ListItem>100% GDPR & AI Act Compliance</ListItem>
+        <ListItem>Zero Security Incidents</ListItem>
+        <ListItem>ROI nach 18 Monaten erreicht</ListItem>
+      </UnorderedList>
+    </FlexBox>
+  </FlexBox>
+</FlexBox>
+
+---
+
+## Warum A1 Telekom Austria?
+
+<FlexBox flexDirection="column" alignItems="center" style={{ marginTop: '2rem', padding: '0 3rem' }}>
+  <Heading fontSize="2xl" color="primary" margin="0 0 2rem 0">
+    Ihr Partner für souveräne Cloud-Lösungen im Public Sector
+  </Heading>
+
+  <FlexBox flexDirection="row" style={{ gap: '2rem', width: '100%', flexWrap: 'wrap', justifyContent: 'center' }}>
+    <FlexBox flexDirection="column" alignItems="center" style={{ flex: '1 1 200px', maxWidth: '250px' }}>
+      <Text fontSize="3xl" margin="0 0 1rem 0">🇦🇹</Text>
+      <Heading fontSize="lg" color="secondary" margin="0 0 0.5rem 0">Österreichisch</Heading>
+      <Text fontSize="sm" color="quinary" style={{ textAlign: 'center' }}>
+        Headquarter in Wien, lokale Teams, Verständnis für österreichische Regulatorik
+      </Text>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" alignItems="center" style={{ flex: '1 1 200px', maxWidth: '250px' }}>
+      <Text fontSize="3xl" margin="0 0 1rem 0">☁️</Text>
+      <Heading fontSize="lg" color="secondary" margin="0 0 0.5rem 0">Cloud Expertise</Heading>
+      <Text fontSize="sm" color="quinary" style={{ textAlign: 'center' }}>
+        Azure Gold Partner, 50+ zertifizierte Cloud-Architekten, 200+ erfolgreiche Projekte
+      </Text>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" alignItems="center" style={{ flex: '1 1 200px', maxWidth: '250px' }}>
+      <Text fontSize="3xl" margin="0 0 1rem 0">🏛️</Text>
+      <Heading fontSize="lg" color="secondary" margin="0 0 0.5rem 0">Public Sector</Heading>
+      <Text fontSize="sm" color="quinary" style={{ textAlign: 'center' }}>
+        Langjährige Erfahrung mit Behörden, Verständnis für Compliance-Anforderungen
+      </Text>
+    </FlexBox>
+
+    <FlexBox flexDirection="column" alignItems="center" style={{ flex: '1 1 200px', maxWidth: '250px' }}>
+      <Text fontSize="3xl" margin="0 0 1rem 0">🔐</Text>
+      <Heading fontSize="lg" color="secondary" margin="0 0 0.5rem 0">Security First</Heading>
+      <Text fontSize="sm" color="quinary" style={{ textAlign: 'center' }}>
+        ISO 27001 zertifiziert, SOC 2 Type II, eigenes Security Operations Center (24/7)
+      </Text>
+    </FlexBox>
+  </FlexBox>
+
+  <FlexBox
+    flexDirection="column"
+    alignItems="center"
+    style={{
+      marginTop: '3rem',
+      background: 'var(--bg-card)',
+      padding: '2rem 3rem',
+      borderRadius: '12px',
+      border: '2px solid var(--brand-primary)'
+    }}
+  >
+    <Heading fontSize="xl" color="primary" margin="0 0 1rem 0">
+      Bereit für den nächsten Schritt?
+    </Heading>
+    <Text fontSize="lg" color="quinary" margin="0 0 1.5rem 0" style={{ textAlign: 'center' }}>
+      Lassen Sie uns in einem Workshop Ihre spezifischen Anforderungen besprechen.
+    </Text>
+    <FlexBox flexDirection="row" style={{ gap: '2rem' }}>
+      <FlexBox
+        flexDirection="column"
+        alignItems="center"
+        style={{
+          background: 'var(--brand-primary)',
+          padding: '1rem 2rem',
+          borderRadius: '8px',
+          cursor: 'pointer'
+        }}
+      >
+        <Text fontSize="lg" color="quinary" style={{ fontWeight: 700 }}>
+          📞 Kontakt aufnehmen
+        </Text>
+        <Text fontSize="sm" color="quinary" style={{ opacity: 0.9 }}>
+          public-sector@a1.at
+        </Text>
+      </FlexBox>
+      <FlexBox
+        flexDirection="column"
+        alignItems="center"
+        style={{
+          background: 'var(--accent-1)',
+          padding: '1rem 2rem',
+          borderRadius: '8px',
+          cursor: 'pointer'
+        }}
+      >
+        <Text fontSize="lg" color="quinary" style={{ fontWeight: 700 }}>
+          🗓️ Workshop buchen
+        </Text>
+        <Text fontSize="sm" color="quinary" style={{ opacity: 0.9 }}>
+          kostenlos & unverbindlich
+        </Text>
+      </FlexBox>
+    </FlexBox>
+  </FlexBox>
+</FlexBox>
+
+---
+
+<Notes>
+  - Klare GO-Empfehlung mit Business Case untermauert
+  - 90-Tage-Plan zeigt konkrete, erreichbare Meilensteine
+  - Initial Investment €120K ist überschaubar für Public Sector Budgets
+  - Break-Even nach 18 Monaten ist sehr gut
+  - Phased Rollout minimiert Risiko, ermöglicht Learning
+  - A1 als österreichischer Partner mit lokaler Präsenz
+  - CTA: Workshop buchen (niederschwelliger nächster Schritt)
+</Notes>

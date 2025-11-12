@@ -1,0 +1,283 @@
+/**
+ * Global Styles - Public Sector AI Service Hub
+ * Based on A1 Telekom Austria Brand Guidelines
+ */
+
+/* === RESET & BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--brand-bg);
+  color: var(--text-primary);
+  line-height: var(--line-height-normal);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* === SPECTACLE OVERRIDES === */
+.spectacle-deck {
+  font-family: var(--font-family-sans) !important;
+}
+
+.spectacle-slide {
+  background: #FFFFFF !important;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  box-shadow: var(--shadow-md);
+  padding: 3rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.slide-content {
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+p {
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+a {
+  color: var(--brand-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-1);
+}
+
+code, pre {
+  font-family: var(--font-family-mono);
+  font-size: 0.95em;
+}
+
+/* === LISTS === */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* === TABLES === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th {
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+}
+
+td, th {
+  padding: 0.75rem 1rem;
+}
+
+/* === CODE BLOCKS === */
+.prism-code {
+  background-color: #F6F7F9 !important;
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  overflow-x: auto;
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  box-shadow: none;
+}
+
+/* === KPI CARD HOVER === */
+.kpi-card {
+  cursor: default;
+}
+
+.kpi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--brand-primary);
+  background-color: var(--bg-surface);
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInSlide 0.6s ease-out forwards;
+}
+
+/* === PRINT STYLES === */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .spectacle-slide {
+    page-break-after: always;
+    background: white !important;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  /* Hide interactive elements */
+  button,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+
+  .spectacle-slide {
+    padding: 2.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  .spectacle-slide {
+    padding: 1.5rem !important;
+    border-radius: var(--border-radius-lg);
+  }
+}
+
+/* === ACCESSIBILITY === */
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* === UTILITY CLASSES === */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-8 { margin-top: var(--space-8); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-4 { padding: var(--space-4); }
+.p-8 { padding: var(--space-8); }
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-8 { gap: var(--space-8); }
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.glass-panel {
+  background: var(--bg-surface);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(var(--blur-lg));
+}

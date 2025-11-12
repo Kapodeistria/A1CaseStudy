@@ -1,0 +1,103 @@
+presentations/public-sector-ai-service-hub/
+├── 📄 package.json                    # Dependencies & Scripts
+├── 📄 vite.config.ts                  # Vite + MDX Config
+├── 📄 tsconfig.json                   # TypeScript Config
+├── 📄 tsconfig.node.json              # Node Scripts Config
+├── 📄 index.html                      # Entry Point
+├── 📘 README.md                       # Comprehensive Docs (16KB)
+├── 📄 .gitignore                      # Git Excludes
+├── 📄 .editorconfig                   # Code Formatting
+├── 📄 VALIDATION_REPORT.md            # This validation report
+│
+├── 📂 public/
+│   ├── favicon.svg                    # A1 Branded Icon
+│   └── robots.txt                     # SEO Configuration
+│
+├── 📂 src/
+│   ├── main.tsx                       # React Root + Deck
+│   ├── app.css                        # Global Styles
+│   │
+│   ├── 📂 theme/
+│   │   ├── tokens.css                 # CSS Variables (A1 Branding)
+│   │   └── spectacleTheme.ts          # Spectacle Theme Config
+│   │
+│   ├── 📂 components/
+│   │   ├── TitleSlide.tsx             # Title Slide Component
+│   │   ├── Section.tsx                # Section Divider Component
+│   │   └── KPI.tsx                    # KPI Card Component
+│   │
+│   ├── 📂 slides/                     # 10 MDX Slides
+│   │   ├── 00-title.mdx               # Title & Org
+│   │   ├── 01-context.mdx             # Context & Challenges
+│   │   ├── 02-vision.mdx              # Vision & KPIs
+│   │   ├── 03-architecture.mdx        # Architecture Diagram
+│   │   ├── 04-data-ml.mdx             # AI Use Cases
+│   │   ├── 05-security-compliance.mdx # GDPR, AI Act
+│   │   ├── 06-deployment.mdx          # Sovereign vs Hybrid
+│   │   ├── 07-tco-roi.mdx             # TCO Comparison
+│   │   ├── 08-risks.mdx               # Risk Matrix
+│   │   └── 09-cta.mdx                 # Call to Action
+│   │
+│   ├── 📂 content/                    # Asset Folders (created by extract script)
+│   │   ├── images/                    # Logos, Diagrams
+│   │   └── data/                      # JSON/YAML
+│   │
+│   └── 📂 i18n/
+│       ├── de.ts                      # German Translations
+│       └── en.ts                      # English Translations
+│
+└── 📂 scripts/
+    ├── extract-assets.mjs             # Extract Assets from Parent Repo
+    ├── build-and-serve.mjs            # Build + Serve Script
+    └── split-to-new-repo.sh           # Git Subtree Split Script
+
+📊 STATISTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Total Files:           32
+Total Lines of Code:   ~2,504
+TypeScript/TSX:        6 files
+MDX Slides:            10 files
+CSS:                   2 files
+Scripts:               3 files
+Config Files:          4 files
+
+🎨 BRANDING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Organization:          A1 Telekom Austria
+Primary Color:         #E60000 (A1 Red)
+Accent Color:          #00AEEF (Azure Blue)
+Background:            #0B0B0B (Dark)
+Use Case:              Public Sector AI Service Hub
+
+📦 DEPENDENCIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Production:
+  - react ^18.3.1
+  - react-dom ^18.3.1
+  - spectacle ^10.1.8
+
+Development:
+  - vite ^5.2.10
+  - typescript ^5.4.5
+  - @mdx-js/rollup ^3.0.1
+  - @vitejs/plugin-react ^4.2.1
+  - eslint + plugins
+  - @types/react, @types/react-dom
+  - remark-gfm ^4.0.0
+
+🚀 QUICK START
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. npm install
+2. npm run extract          # Extract assets (optional)
+3. npm run dev              # Start dev server
+4. npm run build            # Build for production
+5. npm run preview          # Preview build
+
+☁️ DEPLOYMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Target: Azure Static Web Apps / Azure Blob Storage
+Region: Germany North (Frankfurt)
+Build Output: dist/
+Deploy: See README.md for detailed instructions
+
+✅ STATUS: READY FOR DEVELOPMENT

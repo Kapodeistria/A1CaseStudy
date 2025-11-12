@@ -1,0 +1,143 @@
+import { Section } from '../components/Section'
+import { Heading, Text, FlexBox, CodePane } from 'spectacle'
+
+<Section title="Architektur" subtitle="Azure-Native Service Hub" color="secondary" icon="🏗️" />
+
+---
+
+## High-Level Architektur
+
+<FlexBox flexDirection="column" alignItems="center" style={{ marginTop: '2rem' }}>
+  <svg width="1200" height="600" viewBox="0 0 1200 600" style={{ background: 'var(--bg-card)', borderRadius: '12px', padding: '2rem' }}>
+    {/* Citizens/Users Layer */}
+    <rect x="50" y="50" width="200" height="80" fill="var(--brand-primary)" rx="8" />
+    <text x="150" y="95" textAnchor="middle" fill="white" fontSize="18" fontWeight="bold">Bürger / Behörden</text>
+
+    {/* API Gateway */}
+    <rect x="400" y="50" width="200" height="80" fill="var(--accent-1)" rx="8" />
+    <text x="500" y="85" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">API Gateway</text>
+    <text x="500" y="105" textAnchor="middle" fill="white" fontSize="12">(Azure API Management)</text>
+
+    {/* Arrow */}
+    <line x1="250" y1="90" x2="400" y2="90" stroke="white" strokeWidth="3" markerEnd="url(#arrowhead)" />
+
+    {/* AI Services */}
+    <rect x="750" y="30" width="350" height="120" fill="var(--gray-800)" stroke="var(--accent-2)" strokeWidth="3" rx="8" />
+    <text x="925" y="60" textAnchor="middle" fill="var(--accent-2)" fontSize="18" fontWeight="bold">AI Services Layer</text>
+    <rect x="770" y="75" width="150" height="50" fill="var(--accent-2)" rx="4" />
+    <text x="845" y="105" textAnchor="middle" fill="black" fontSize="14" fontWeight="bold">Azure OpenAI</text>
+    <rect x="940" y="75" width="140" height="50" fill="var(--accent-2)" rx="4" />
+    <text x="1010" y="105" textAnchor="middle" fill="black" fontSize="14" fontWeight="bold">Form Recognizer</text>
+
+    {/* Arrow to AI */}
+    <line x1="600" y1="90" x2="750" y2="90" stroke="white" strokeWidth="3" markerEnd="url(#arrowhead)" />
+
+    {/* Application Layer */}
+    <rect x="350" y="200" width="500" height="150" fill="var(--gray-800)" stroke="var(--brand-primary)" strokeWidth="3" rx="8" />
+    <text x="600" y="230" textAnchor="middle" fill="var(--brand-primary)" fontSize="18" fontWeight="bold">Application Services</text>
+
+    <rect x="370" y="250" width="120" height="60" fill="var(--brand-primary)" rx="4" />
+    <text x="430" y="275" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">Antrags-</text>
+    <text x="430" y="295" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">Management</text>
+
+    <rect x="520" y="250" width="120" height="60" fill="var(--brand-primary)" rx="4" />
+    <text x="580" y="275" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">Bürger-</text>
+    <text x="580" y="295" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">Portal</text>
+
+    <rect x="670" y="250" width="120" height="60" fill="var(--brand-primary)" rx="4" />
+    <text x="730" y="275" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">Workflow-</text>
+    <text x="730" y="295" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">Engine</text>
+
+    {/* Arrow */}
+    <line x1="500" y1="130" x2="600" y2="200" stroke="white" strokeWidth="3" markerEnd="url(#arrowhead)" />
+
+    {/* Data Layer */}
+    <rect x="100" y="420" width="400" height="120" fill="var(--gray-800)" stroke="var(--accent-1)" strokeWidth="3" rx="8" />
+    <text x="300" y="450" textAnchor="middle" fill="var(--accent-1)" fontSize="18" fontWeight="bold">Data Layer (Germany North)</text>
+
+    <rect x="120" y="470" width="110" height="50" fill="var(--accent-1)" rx="4" />
+    <text x="175" y="500" textAnchor="middle" fill="black" fontSize="12" fontWeight="bold">Azure SQL</text>
+
+    <rect x="250" y="470" width="110" height="50" fill="var(--accent-1)" rx="4" />
+    <text x="305" y="500" textAnchor="middle" fill="black" fontSize="12" fontWeight="bold">Cosmos DB</text>
+
+    <rect x="380" y="470" width="100" height="50" fill="var(--accent-1)" rx="4" />
+    <text x="430" y="500" textAnchor="middle" fill="black" fontSize="12" fontWeight="bold">Blob Storage</text>
+
+    {/* Arrow */}
+    <line x1="600" y1="350" x2="300" y2="420" stroke="white" strokeWidth="3" markerEnd="url(#arrowhead)" />
+
+    {/* Security & Monitoring */}
+    <rect x="700" y="420" width="400" height="120" fill="var(--gray-800)" stroke="var(--color-success)" strokeWidth="3" rx="8" />
+    <text x="900" y="450" textAnchor="middle" fill="var(--color-success)" fontSize="18" fontWeight="bold">Security & Governance</text>
+
+    <rect x="720" y="470" width="110" height="50" fill="var(--color-success)" rx="4" />
+    <text x="775" y="495" textAnchor="middle" fill="black" fontSize="11" fontWeight="bold">Azure Sentinel</text>
+
+    <rect x="850" y="470" width="110" height="50" fill="var(--color-success)" rx="4" />
+    <text x="905" y="495" textAnchor="middle" fill="black" fontSize="11" fontWeight="bold">Key Vault</text>
+
+    <rect x="980" y="470" width="100" height="50" fill="var(--color-success)" rx="4" />
+    <text x="1030" y="495" textAnchor="middle" fill="black" fontSize="11" fontWeight="bold">Purview</text>
+
+    {/* Arrow marker definition */}
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="white" />
+      </marker>
+    </defs>
+  </svg>
+</FlexBox>
+
+---
+
+## Technologie-Stack
+
+<FlexBox flexDirection="row" style={{ gap: '3rem', marginTop: '2rem', justifyContent: 'center' }}>
+  <FlexBox flexDirection="column" style={{ flex: 1 }}>
+    <Heading fontSize="xl" color="primary" margin="0 0 1.5rem 0">Frontend</Heading>
+    <CodePane language="yaml" theme="dracula" highlightRanges={[[1, 6]]}>
+{`# React 18 + TypeScript
+- Next.js 14 (App Router)
+- TailwindCSS + Shadcn/ui
+- React Query (Server State)
+- WCAG 2.1 AA Compliance
+- Progressive Web App`}
+    </CodePane>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: 1 }}>
+    <Heading fontSize="xl" color="secondary" margin="0 0 1.5rem 0">Backend</Heading>
+    <CodePane language="yaml" theme="dracula" highlightRanges={[[1, 6]]}>
+{`# Azure PaaS Services
+- Azure Functions (.NET 8)
+- Azure App Service
+- Azure API Management
+- Service Bus (async)
+- Azure Logic Apps`}
+    </CodePane>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: 1 }}>
+    <Heading fontSize="xl" color="tertiary" margin="0 0 1.5rem 0">AI & Data</Heading>
+    <CodePane language="yaml" theme="dracula" highlightRanges={[[1, 6]]}>
+{`# Azure AI + Data
+- Azure OpenAI (GPT-4)
+- Form Recognizer
+- Azure SQL (relational)
+- Cosmos DB (NoSQL)
+- Synapse Analytics`}
+    </CodePane>
+  </FlexBox>
+</FlexBox>
+
+---
+
+<Notes>
+  - Azure-native Architektur für maximale Datensouveränität
+  - Alle Daten in Germany North Region (Frankfurt)
+  - API Gateway als Single Entry Point für Security & Monitoring
+  - Microservices-Architektur für unabhängige Skalierung
+  - AI Services isoliert in eigenem Layer mit Confidential Computing
+  - Security & Governance durchgängig integriert (nicht nachträglich)
+</Notes>

@@ -1,0 +1,42 @@
+import { Section } from '../components/Section'
+import { Heading, Text, FlexBox, UnorderedList, ListItem } from 'spectacle'
+
+<Section title="Kontext & Herausforderungen" subtitle="Der Status Quo im öffentlichen Sektor" color="primary" icon="🏛️" />
+
+---
+
+## Digitalisierungsdruck im Public Sector
+
+<FlexBox flexDirection="row" style={{ gap: '2rem', marginTop: '2rem' }}>
+  <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px' }}>
+    <Heading fontSize="2xl" color="primary" margin="0 0 1rem 0">⚠️ Probleme</Heading>
+    <UnorderedList fontSize="lg" color="quinary">
+      <ListItem>Legacy-Systeme mit Datensilos</ListItem>
+      <ListItem>Manuelle, papierbasierte Prozesse</ListItem>
+      <ListItem>Langsame Bearbeitungszeiten</ListItem>
+      <ListItem>Inkonsistente Bürger-Erfahrung</ListItem>
+      <ListItem>Fachkräftemangel IT/Verwaltung</ListItem>
+    </UnorderedList>
+  </FlexBox>
+
+  <FlexBox flexDirection="column" style={{ flex: 1, background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px' }}>
+    <Heading fontSize="2xl" color="secondary" margin="0 0 1rem 0">🎯 Anforderungen</Heading>
+    <UnorderedList fontSize="lg" color="quinary">
+      <ListItem>GDPR & AI Act Compliance</ListItem>
+      <ListItem>Datensouveränität (EU/AT)</ListItem>
+      <ListItem>Barrierefreiheit (WCAG 2.1 AA)</ListItem>
+      <ListItem>24/7 Verfügbarkeit</ListItem>
+      <ListItem>Transparenz & Nachvollziehbarkeit</ListItem>
+    </UnorderedList>
+  </FlexBox>
+</FlexBox>
+
+---
+
+<Notes>
+  - Public Sector steht vor massivem Digitalisierungsdruck
+  - Bürger erwarten moderne, digitale Services wie im B2C-Bereich
+  - Gleichzeitig: Strenge regulatorische Anforderungen (GDPR, AI Act ab 2025)
+  - Datensouveränität ist nicht nur "nice to have" sondern rechtlich verpflichtend
+  - Fachkräftemangel verschärft die Situation zusätzlich
+</Notes>

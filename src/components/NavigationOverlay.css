@@ -1,0 +1,222 @@
+/* Navigation Overlay - A1 Style */
+
+/* Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: rgba(230, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(230, 0, 0, 0.12), transparent);
+  opacity: 0.7;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #E60000 0%, #00AEEF 100%);
+  transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(230, 0, 0, 0.4);
+}
+
+/* Navigation Controls */
+.navigation {
+  position: fixed;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(14px);
+  padding: 1rem 2.6rem;
+  border-radius: 999px;
+  z-index: 1000;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.28);
+}
+
+.nav-button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: linear-gradient(135deg, #E60000 0%, #B30000 100%);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  box-shadow: 0 12px 25px rgba(230, 0, 0, 0.28);
+}
+
+.nav-button:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.08);
+  box-shadow: 0 16px 32px rgba(230, 0, 0, 0.35);
+}
+
+.nav-button:disabled {
+  background: rgba(148, 163, 184, 0.3);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.slide-counter {
+  color: #e5e7eb;
+  font-family: 'SF Mono', 'Monaco', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 88px;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+.timer-display {
+  color: #e5e7eb;
+  font-family: 'SF Mono', 'Monaco', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 88px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* Home Button */
+.home-button {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 56px;
+  height: 56px;
+  border: none;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(14px);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  z-index: 1000;
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.28);
+}
+
+.home-button:hover {
+  transform: translateY(-2px) scale(1.1);
+  background: linear-gradient(135deg, #E60000 0%, #B30000 100%);
+  box-shadow: 0 16px 32px rgba(230, 0, 0, 0.35);
+}
+
+/* Slide Indicators (Dots) */
+.slide-indicators {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1000;
+  padding: 0.75rem 0.6rem;
+  background: rgba(248, 250, 252, 0.75);
+  border-radius: 999px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border: none;
+  background: rgba(148, 163, 184, 0.45);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.indicator:hover {
+  background: rgba(230, 0, 0, 0.55);
+  transform: scale(1.28);
+}
+
+.indicator.active {
+  background: #E60000;
+  transform: scale(1.5);
+  box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .navigation {
+    bottom: 1.5rem;
+    padding: 0.85rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .slide-indicators {
+    right: 1.2rem;
+  }
+
+  .home-button {
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    bottom: 1rem;
+    padding: 0.75rem 1.5rem;
+    gap: 1rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .slide-counter {
+    font-size: 0.9rem;
+    min-width: 70px;
+  }
+
+  .timer-display {
+    font-size: 0.9rem;
+    min-width: 70px;
+  }
+
+  .slide-indicators {
+    display: none;
+  }
+
+  .home-button {
+    top: 1rem;
+    left: 1rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+}
