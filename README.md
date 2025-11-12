@@ -23,7 +23,7 @@ Moderne, interaktive Präsentation für den Public Sector AI Service Hub von A1 
 
 ## 🚀 Live Demo
 
-**Production:** https://gray-glacier-0e42a7a03.3.azurestaticapps.net
+**Production:** https://a1-casestudy-ai.azurewebsites.net
 
 ### Routen:
 - `/` - Version Selector
@@ -39,7 +39,7 @@ Moderne, interaktive Präsentation für den Public Sector AI Service Hub von A1 
 - **Styling:** CSS Variables + Tailwind-inspired classes
 - **Animation:** Framer Motion
 - **Routing:** React Router
-- **Hosting:** Azure Static Web Apps
+- **Hosting:** Azure App Service
 
 ## 🛠️ Development
 
