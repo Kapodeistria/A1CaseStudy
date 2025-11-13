@@ -7,13 +7,6 @@ export default function VersionSelector() {
   return (
     <div className="version-selector">
       <div className="selector-container">
-        <div className="selector-header">
-          <h1>KI-gestützte Qualitätskontrolle</h1>
-          <p className="selector-subtitle">Hybrid AI Architecture auf Azure</p>
-          <p className="selector-tagline">Souveräne Smart Factory Lösung mit Data Governance</p>
-          <div className="selector-divider"></div>
-        </div>
-
         <div className="versions-grid">
           <div className="version-card" onClick={() => navigate('/personal')}>
             <span className="version-badge">Persönlich</span>
